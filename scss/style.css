@@ -39,6 +39,9 @@ body {
   align-items: center;
   max-width: calc(50% - 1rem);
 }
+.content-wrapper .partation-warpper .content-container {
+  padding: 0px;
+}
 .content-wrapper .partation-warpper .content-container .container {
   display: flex !important;
   flex-direction: column !important;
@@ -47,14 +50,13 @@ body {
   width: 70%;
 }
 .content-wrapper .partation-warpper .content-container .container .login-wrapper {
-  padding: 16px;
   display: flex;
   align-items: center;
   flex-direction: column;
   width: 100%;
   background-color: rgb(255, 255, 255);
   height: 5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 .content-wrapper .partation-warpper .content-container .container .login-wrapper .login {
   font-family: Inter;
@@ -122,8 +124,8 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 3.5rem; /* Height of the container */
-  border: 1px solid black; /* Border for the container */
+  height: 3.5rem;
+  border: 1px solid #C9C6C5;
   border-radius: 3.125rem; /* Rounded corners */
   overflow: hidden; /* Ensures input respects border-radius */
   background-color: #ffffff; /* Optional background for the container */
@@ -149,7 +151,7 @@ body {
   text-align: left;
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
-  color: #ADAAAA;
+  color: #adaaaa;
 }
 .content-wrapper .partation-warpper .content-container .container .login-options input::placeholder {
   color: #c0c0c0; /* Placeholder text color */
@@ -162,7 +164,7 @@ body {
   text-underline-position: from-font;
   -webkit-text-decoration-skip-ink: none;
           text-decoration-skip-ink: none;
-  color: #ADAAAA;
+  color: #adaaaa;
 }
 .content-wrapper .partation-warpper .content-container .container .terms {
   margin-top: 2rem;
@@ -229,7 +231,7 @@ body {
   text-underline-position: from-font;
   -webkit-text-decoration-skip-ink: none;
           text-decoration-skip-ink: none;
-  color: #7343EA;
+  color: #7343ea;
 }
 .content-wrapper .partation-warpper .content-container .container .login-button {
   margin-top: 2rem;
@@ -249,8 +251,64 @@ body {
   -webkit-text-decoration-skip-ink: none;
           text-decoration-skip-ink: none;
   color: #313030;
-  background: #683CD3;
+  background: #683cd3;
   color: white;
+}
+.content-wrapper .partation-warpper .content-container .container .signin-with {
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.content-wrapper .partation-warpper .content-container .container .signin-with .part1 {
+  width: 40%;
+  height: 1px;
+  background-color: #313131;
+}
+.content-wrapper .partation-warpper .content-container .container .signin-with .part2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.94px;
+  text-underline-position: from-font;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+  color: #313131;
+}
+.content-wrapper .partation-warpper .content-container .container .signin-with .part3 {
+  width: 40%;
+  height: 1px;
+  background-color: #313131;
+}
+.content-wrapper .partation-warpper .content-container .container .google-login {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 3.5rem;
+  border: 1px solid #797676;
+  border-radius: 3.125rem;
+  overflow: hidden;
+  background-color: #ffffff;
+  gap: 0.4rem;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.36px;
+  text-align: left;
+  text-underline-position: from-font;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+  color: #313030;
+}
+.content-wrapper .partation-warpper .content-container .page2 {
+  margin-top: 1rem;
+  height: calc(100% - 5rem);
 }
 .content-wrapper .partation-warpper .image-container img {
   max-width: 100%;
