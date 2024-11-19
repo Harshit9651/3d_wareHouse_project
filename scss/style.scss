@@ -188,12 +188,54 @@ body {
             color: #1b74f9;
           }
         }
-        .forgot-remeber{
+        // .forgot-remeber{
+        //   width: 100%;
+        //   display: flex;
+        //   background-color: #1b74f9;
+        //   height: 1.5rem;
+        // }
+        .check-error {
+          height: 3rem;
           width: 100%;
           display: flex;
-          background-color: #1b74f9;
-        }
+          justify-content: space-between;
+          align-items: center;
+          .check-box {
+            height: 1.5rem;
+            width: 25%;
 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .text {
+              font-family: Inter;
+              font-size: 14px;
+              font-weight: 400;
+              line-height: 16.94px;
+              text-align: left;
+              text-underline-position: from-font;
+              text-decoration-skip-ink: none;
+              color: #605e5e;
+            }
+          }
+          .forgot-password {
+            width: 30%;
+            height: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            font-family: Inter;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 16.94px;
+            text-align: right;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: #7343EA;
+
+          }
+        }
       }
     }
 
