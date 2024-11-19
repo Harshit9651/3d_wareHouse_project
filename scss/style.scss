@@ -46,22 +46,21 @@ body {
       .container {
         display: flex !important;
         flex-direction: column !important;
+        justify-content: center;
         gap: 0.5rem;
         height: calc(100% - 10rem);
-
         width: 70%;
-
+    
         .login-wrapper {
           // padding: 16px;
           display: flex;
           align-items: center;
           flex-direction: column;
-        
           width: 100%;
-          background-color: rgb(255, 255, 255);
           height: 5rem;
           margin-bottom: 1.5rem;
-         
+        
+        
           .login {
             font-family: Inter;
             font-size: 36px;
@@ -97,13 +96,7 @@ body {
             text-underline-position: from-font;
             text-decoration-skip-ink: none;
             color: #484646;
-            .forgot-paragraph{
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              
-            }
-
+           
             span {
               //styleName: Body Big/SB;
               font-family: Inter;
@@ -118,6 +111,15 @@ body {
               color: #7343ea;
             }
           }
+          .forgot-paragraph{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+        }
+        .forgot{
+          margin-bottom: 4rem;
         }
         .login-options {
           width: 100;
@@ -125,6 +127,7 @@ body {
           display: flex;
           flex-direction: column;
           gap: 2rem;
+          
 
           .with {
             display: flex;
@@ -156,8 +159,28 @@ body {
             overflow: hidden;
             background-color: #ffffff;
             position: relative;
+         
           }
-     
+.login{
+  margin-top: 1rem;
+  background: #D2D1D3;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16.94px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #8F8C91;
+  
+
+}
+.login.active {
+  background: #683CD3;
+
+  color: #ffffff;
+  cursor: pointer;
+}
         
           .password {
             position: relative;
@@ -372,6 +395,7 @@ body {
         margin-top: 1rem;
         height: calc(100% - 5rem);
       }
+
     }
 
     .image-container {

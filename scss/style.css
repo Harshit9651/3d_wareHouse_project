@@ -45,6 +45,7 @@ body {
 .content-wrapper .partation-warpper .content-container .container {
   display: flex !important;
   flex-direction: column !important;
+  justify-content: center;
   gap: 0.5rem;
   height: calc(100% - 10rem);
   width: 70%;
@@ -54,7 +55,6 @@ body {
   align-items: center;
   flex-direction: column;
   width: 100%;
-  background-color: rgb(255, 255, 255);
   height: 5rem;
   margin-bottom: 1.5rem;
 }
@@ -92,11 +92,6 @@ body {
           text-decoration-skip-ink: none;
   color: #484646;
 }
-.content-wrapper .partation-warpper .content-container .container .login-wrapper .paragraph .forgot-paragraph {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 .content-wrapper .partation-warpper .content-container .container .login-wrapper .paragraph span {
   font-family: Inter;
   font-size: 15px;
@@ -109,6 +104,14 @@ body {
   -webkit-text-decoration-skip-ink: none;
           text-decoration-skip-ink: none;
   color: #7343ea;
+}
+.content-wrapper .partation-warpper .content-container .container .login-wrapper .forgot-paragraph {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content-wrapper .partation-warpper .content-container .container .forgot {
+  margin-bottom: 4rem;
 }
 .content-wrapper .partation-warpper .content-container .container .login-options {
   width: 100;
@@ -146,6 +149,24 @@ body {
   overflow: hidden;
   background-color: #ffffff;
   position: relative;
+}
+.content-wrapper .partation-warpper .content-container .container .login-options .login {
+  margin-top: 1rem;
+  background: #D2D1D3;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16.94px;
+  text-align: left;
+  text-underline-position: from-font;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+  color: #8F8C91;
+}
+.content-wrapper .partation-warpper .content-container .container .login-options .login.active {
+  background: #683CD3;
+  color: #ffffff;
+  cursor: pointer;
 }
 .content-wrapper .partation-warpper .content-container .container .login-options .password {
   position: relative;
