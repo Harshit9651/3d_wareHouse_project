@@ -24,12 +24,15 @@
               <div class="with">
                 <input type="email" placeholder=" Email" />
               </div>
-              <div class="with password">
-                <input type="password" placeholder="Password" />
+              <div class="with password" id="password-container">
+                <input type="password" placeholder="Password" id="password-input" />
                 <div class="hide">
                     <img src="./assets/hideicon.svg" alt="">
                 </div>
               </div>
+            </div>
+            <div class="error">
+                Wrong Password!
             </div>
 
             <div class="check-error">
@@ -55,5 +58,34 @@
         </div>
       </div>
     </div>
+
+
+    <script>
+        const passwordInput = document.getElementById('password-input');
+        const passwordContainer = document.getElementById('password-container');
+        const errorMessage = document.getElementById('password-error');
+      
+        function showError() {
+       
+          passwordContainer.style.border = '1px solid #e8505b';
+      
+     
+          const passwordValue = passwordInput.value;
+          const maskedValue = '*'.repeat(passwordValue.length);
+          passwordInput.value = maskedValue;
+          passwordInput.style.color = '#e8505b';
+      
+       
+          errorMessage.style.display = 'block';
+        }
+      
+      const loginButton = document.querySelector('.login-button');
+        loginButton.addEventListener('click', (e) => {
+          e.preventDefault(); 
+          showError();
+        });
+     
+      </script>
+      
   </body>
 </html>
