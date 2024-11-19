@@ -4,48 +4,68 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./scss/style.css" />
-    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.19/build/css/intlTelInput.css"
+    />
+    <title>Phone Input</title>
   </head>
   <body>
     <div class="content-wrapper">
       <div class="heading">
-        <img src="./assets/3dmodel.svg" alt="" />
+        <img src="./assets/3dmodel.svg" alt="Logo" />
       </div>
       <div class="partation-warpper">
         <div class="content-container">
           <div class="container page3">
             <div class="login-wrapper forgot">
-              <div class="login forgot-password">Reset Password</div>
-              <div class="paragraph forgot-paragraph">
-                Please set a new password for your account.
+              <div class="login forgot-password">Log in</div>
+              <div class="paragraph">
+                Don’t have an account? <span>SignUp</span>
               </div>
             </div>
             <div class="login-options">
               <div class="with Rpassword">
-                <input type="password" placeholder="Password" id="password-input" />
-              </div>
-              <div class="with RconfirmPassword"  id="password-container">
+                <!-- Phone Input Field -->
                 <input
-                id="password-confirm"
-                  type="password"
-                  placeholder="Confirm password"
+                  type="tel"
+                  class="form-control"
+                  id="phone_number"
+                  name="phone_number"
+                  placeholder="Enter your phone number"
+                  required
                 />
               </div>
-              <div class="success-message">
-                
-                Passwords Match!
-              </div>
-              <div class="with login" id="submit-btn">Set Password</div>
+              <div class="with login" id="submit-btn">Send Otp</div>
             </div>
           </div>
         </div>
         <div class="image-container">
-          <img src="./assets/loginpageimage.svg" alt="" />
+          <img src="./assets/loginpageimage.svg" alt="Login Illustration" />
         </div>
       </div>
-
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.19/build/js/intlTelInput.min.js"></script>
+    <script>
+      // Initialize intl-tel-input
+      const phoneInputField = document.querySelector("#phone_number");
 
- 
+      const phoneInput = window.intlTelInput(phoneInputField, {
+        initialCountry: "in", // Set default country
+        preferredCountries: ["us", "gb", "in"], // Preferred countries
+        utilsScript:
+          "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js",
+      });
+
+      // Handle Submit Button
+      document.querySelector("#submit-btn").addEventListener("click", () => {
+        const phoneNumber = phoneInput.getNumber();
+        if (phoneInput.isValidNumber()) {
+          alert(`Phone number is valid: ${phoneNumber}`);
+        } else {
+          alert("Please enter a valid phone number.");
+        }
+      });
+    </script>
   </body>
 </html>
