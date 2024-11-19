@@ -78,7 +78,7 @@ body {
   text-underline-position: from-font;
   -webkit-text-decoration-skip-ink: none;
           text-decoration-skip-ink: none;
-  color: #1C1B1C;
+  color: #1c1b1c;
 }
 .content-wrapper .partation-warpper .content-container .container .login-wrapper .paragraph {
   width: 100%;
@@ -152,7 +152,7 @@ body {
 }
 .content-wrapper .partation-warpper .content-container .container .login-options .login {
   margin-top: 1rem;
-  background: #D2D1D3;
+  background: #d2d1d3;
   font-family: Inter;
   font-size: 14px;
   font-weight: 500;
@@ -161,10 +161,10 @@ body {
   text-underline-position: from-font;
   -webkit-text-decoration-skip-ink: none;
           text-decoration-skip-ink: none;
-  color: #8F8C91;
+  color: #8f8c91;
 }
 .content-wrapper .partation-warpper .content-container .container .login-options .login.active {
-  background: #683CD3;
+  background: #683cd3;
   color: #ffffff;
   cursor: pointer;
 }
@@ -392,4 +392,16 @@ body {
   height: auto;
   -o-object-fit: contain;
      object-fit: contain;
+}
+.content-wrapper .succes-card {
+  display: flex;
+  width: 25rem;
+  height: 4.625rem;
+  padding: 16px 12px 16px 16px;
+  gap: 12px;
+  border-radius: 16px;
+  border: 1px;
+  color: #FFFFFF;
+  border: 1px solid #E6F9F1;
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.1215686275);
 }/*# sourceMappingURL=style.css.map */

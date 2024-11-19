@@ -50,7 +50,7 @@ body {
         gap: 0.5rem;
         height: calc(100% - 10rem);
         width: 70%;
-    
+
         .login-wrapper {
           // padding: 16px;
           display: flex;
@@ -59,8 +59,7 @@ body {
           width: 100%;
           height: 5rem;
           margin-bottom: 1.5rem;
-        
-        
+
           .login {
             font-family: Inter;
             font-size: 36px;
@@ -71,7 +70,6 @@ body {
             text-decoration-skip-ink: none;
             color: #1c1b1c;
             margin-bottom: 1rem;
-           
           }
           .forgot-password {
             font-family: Inter;
@@ -80,14 +78,10 @@ body {
             line-height: 46.8px;
             text-underline-position: from-font;
             text-decoration-skip-ink: none;
-            color: #1C1B1C;
-         
-
-
+            color: #1c1b1c;
           }
           .paragraph {
-            
-         width: 100%;
+            width: 100%;
             font-family: Inter;
             font-size: 15px;
             font-weight: 400;
@@ -96,7 +90,7 @@ body {
             text-underline-position: from-font;
             text-decoration-skip-ink: none;
             color: #484646;
-           
+
             span {
               //styleName: Body Big/SB;
               font-family: Inter;
@@ -111,14 +105,13 @@ body {
               color: #7343ea;
             }
           }
-          .forgot-paragraph{
+          .forgot-paragraph {
             display: flex;
             justify-content: center;
             align-items: center;
           }
-
         }
-        .forgot{
+        .forgot {
           margin-bottom: 4rem;
         }
         .login-options {
@@ -127,7 +120,6 @@ body {
           display: flex;
           flex-direction: column;
           gap: 2rem;
-          
 
           .with {
             display: flex;
@@ -159,29 +151,26 @@ body {
             overflow: hidden;
             background-color: #ffffff;
             position: relative;
-         
           }
-.login{
-  margin-top: 1rem;
-  background: #D2D1D3;
-  font-family: Inter;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 16.94px;
-  text-align: left;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
-  color: #8F8C91;
-  
+          .login {
+            margin-top: 1rem;
+            background: #d2d1d3;
+            font-family: Inter;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 16.94px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: #8f8c91;
+          }
+          .login.active {
+            background: #683cd3;
 
-}
-.login.active {
-  background: #683CD3;
+            color: #ffffff;
+            cursor: pointer;
+          }
 
-  color: #ffffff;
-  cursor: pointer;
-}
-        
           .password {
             position: relative;
           }
@@ -395,7 +384,6 @@ body {
         margin-top: 1rem;
         height: calc(100% - 5rem);
       }
-
     }
 
     .image-container {
@@ -405,5 +393,19 @@ body {
         object-fit: contain;
       }
     }
+  }
+  .succes-card {
+    display: flex;
+    width:25rem;
+    height: 4.625rem;
+    padding: 16px 12px 16px 16px;
+    gap: 12px;
+    border-radius: 16px;
+    border: 1px;
+    color: #FFFFFF;
+    border: 1px solid #E6F9F1;
+    box-shadow: 0px 4px 20px 0px #0000001F;
+
+
   }
 }
