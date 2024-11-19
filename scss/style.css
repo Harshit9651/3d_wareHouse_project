@@ -126,9 +126,19 @@ body {
   width: 100%;
   height: 3.5rem;
   border: 1px solid #C9C6C5;
-  border-radius: 3.125rem; /* Rounded corners */
-  overflow: hidden; /* Ensures input respects border-radius */
-  background-color: #ffffff; /* Optional background for the container */
+  border-radius: 3.125rem;
+  overflow: hidden;
+  background-color: #ffffff;
+  position: relative;
+}
+.content-wrapper .partation-warpper .content-container .container .login-options .password {
+  position: relative;
+}
+.content-wrapper .partation-warpper .content-container .container .login-options .hide {
+  position: absolute;
+  right: 0;
+  margin-top: 0.4rem;
+  margin-right: 1rem;
 }
 .content-wrapper .partation-warpper .content-container .container .login-options input {
   width: 100%;
