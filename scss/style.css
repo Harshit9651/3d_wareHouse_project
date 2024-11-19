@@ -8,6 +8,7 @@ body {
   height: 100%;
   width: 100%;
   box-sizing: border-box;
+  position: relative;
 }
 .content-wrapper .heading {
   overflow: hidden;
@@ -150,6 +151,13 @@ body {
   background-color: #ffffff;
   position: relative;
 }
+.content-wrapper .partation-warpper .content-container .container .login-options .RconfirmPassword {
+  border: 1px solid #c9c6c5; /* Default gray border */
+  transition: border 0.3s ease; /* Smooth transition for border changes */
+}
+.content-wrapper .partation-warpper .content-container .container .login-options .RconfirmPassword.green-border {
+  border: 2px solid green; /* Green border when class is added */
+}
 .content-wrapper .partation-warpper .content-container .container .login-options .login {
   margin-top: 1rem;
   background: #d2d1d3;
@@ -162,6 +170,7 @@ body {
   -webkit-text-decoration-skip-ink: none;
           text-decoration-skip-ink: none;
   color: #8f8c91;
+  height: 3rem;
 }
 .content-wrapper .partation-warpper .content-container .container .login-options .login.active {
   background: #683cd3;
@@ -191,7 +200,7 @@ body {
 .content-wrapper .partation-warpper .content-container .container .login-options input::-moz-placeholder {
   color: #c0c0c0; /* Placeholder text color */
   font-size: 14px;
-  font-family: Inter;
+  font-family: "Inter";
   font-size: 14px;
   font-weight: 400;
   line-height: 18.2px;
@@ -203,7 +212,7 @@ body {
 .content-wrapper .partation-warpper .content-container .container .login-options input::placeholder {
   color: #c0c0c0; /* Placeholder text color */
   font-size: 14px;
-  font-family: Inter;
+  font-family: "Inter";
   font-size: 14px;
   font-weight: 400;
   line-height: 18.2px;
@@ -212,6 +221,19 @@ body {
   -webkit-text-decoration-skip-ink: none;
           text-decoration-skip-ink: none;
   color: #adaaaa;
+}
+.content-wrapper .partation-warpper .content-container .container .login-options .success-message {
+  display: none;
+  padding-left: 1rem;
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15.6px;
+  text-align: left;
+  text-underline-position: from-font;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+  color: #06c270;
 }
 .content-wrapper .partation-warpper .content-container .container .error {
   display: none;
@@ -227,6 +249,9 @@ body {
 }
 .content-wrapper .partation-warpper .content-container .container .with.password {
   transition: border 0.3s ease;
+}
+.content-wrapper .partation-warpper .content-container .container .RconfirmPassword {
+  border: 1px solid green;
 }
 .content-wrapper .partation-warpper .content-container .container .terms {
   margin-top: 2rem;
@@ -392,16 +417,4 @@ body {
   height: auto;
   -o-object-fit: contain;
      object-fit: contain;
-}
-.content-wrapper .succes-card {
-  display: flex;
-  width: 25rem;
-  height: 4.625rem;
-  padding: 16px 12px 16px 16px;
-  gap: 12px;
-  border-radius: 16px;
-  border: 1px;
-  color: #FFFFFF;
-  border: 1px solid #E6F9F1;
-  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.1215686275);
 }/*# sourceMappingURL=style.css.map */
