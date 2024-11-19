@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-
+@import "./font.scss";
 body {
   margin: 0;
   padding: 0;
@@ -121,6 +120,7 @@ body {
           display: flex;
           flex-direction: column;
           gap: 2rem;
+          position: relative;
 
           .with {
             display: flex;
@@ -139,6 +139,7 @@ body {
             text-underline-position: from-font;
             text-decoration-skip-ink: none;
             color: #313030;
+            overflow: visible;
           }
 
           .with {
@@ -149,19 +150,57 @@ body {
             height: 3.5rem;
             border: 1px solid #c9c6c5;
             border-radius: 3.125rem;
-            overflow: hidden;
             background-color: #ffffff;
-            position: relative;
+          }
+          .with input {
+            border: none;
+            outline: none;
+            flex: 1;
+            padding: 0 1.5rem;
+            font-size: 1rem;
+            color: #313030;
+            background: transparent;
+          }
+          label {
+            position: absolute;
+            left: 1.5rem;
+            top: 0%;
+            transform: translateY(-50%);
+            transition: all 0.3s ease;
+            pointer-events: none;
+            font-size: 1rem;
+            color: #c0c0c0;
+            background: white;
+            opacity: 0;
+            visibility: hidden;
+          }
+          .with input:focus + label,
+          .with input:not(:placeholder-shown) + label {
+            visibility: visible; /* Make the label visible */
+            opacity: 1; /* Make the label appear smoothly */
+            transform: translateY(-150%); /* Move the label up */
+            font-size: 0.875rem; /* Optional: smaller font size when active */
+            color: #000000; 
+            position: absolute;
+            left: 1.5rem;
+            top: 0%;
+            transform: translateY(-50%);
+            transition: all 0.3s ease;
+            pointer-events: none;
+            font-size: 1rem;
+            color: #c0c0c0;
+            background: white;
+            
+            
           }
           .RconfirmPassword {
-            border: 1px solid #c9c6c5; /* Default gray border */
-            transition: border 0.3s ease; /* Smooth transition for border changes */
+            border: 1px solid #c9c6c5;
+            transition: border 0.3s ease;
           }
 
           .RconfirmPassword.green-border {
-            border: 2px solid green; /* Green border when class is added */
+            border: 2px solid green;
           }
-          
 
           .login {
             margin-top: 1rem;
@@ -421,51 +460,5 @@ body {
       }
     }
   }
-  // .succes-card {
-  //   position: absolute;
-  //   left: 30%;
-  //   top: 10%;
-  //   display: flex;
-  //   justify-content: space-around;
-  //   width: 25rem;
-  //   height: 4.625rem;
-  //   padding: 16px 12px 16px 16px;
-  //   gap: 12px;
-  //   border-radius: 16px;
-  //   border: 1px;
-  //   border: 1px solid #e6f9f1;
-  //   box-shadow: 0px 4px 20px 0px #0000001f;
-  //   align-items: center;
-  //   opacity: 1;
-  //   z-index: 10;
-  //   .content {
-  //     display: flex;
-  //     flex-direction: column;
-  //     gap: 0.5rem;
-
-  //     .heading {
-  //       //styleName: Body Medium/SB;
-  //       font-family: Inter;
-  //       font-size: 14px;
-  //       font-weight: 600;
-  //       line-height: 14px;
-  //       text-underline-position: from-font;
-  //       text-decoration-skip-ink: none;
-  //       color: #484646;
-  //       background: none;
-  //       background-color: transparent;
-  //     }
-  //     .footer {
-  //       font-family: Inter;
-  //       font-size: 12px;
-  //       font-weight: 400;
-  //       line-height: 15.6px;
-  //       text-align: left;
-  //       text-underline-position: from-font;
-  //       text-decoration-skip-ink: none;
-  //       color: #484646;
-
-  //     }
-  //   }
-  // }
+  
 }

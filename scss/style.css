@@ -119,6 +119,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  position: relative;
 }
 .content-wrapper .partation-warpper .content-container .container .login-options .with {
   display: flex;
@@ -138,6 +139,7 @@ body {
   -webkit-text-decoration-skip-ink: none;
           text-decoration-skip-ink: none;
   color: #313030;
+  overflow: visible;
 }
 .content-wrapper .partation-warpper .content-container .container .login-options .with {
   display: flex;
@@ -147,16 +149,70 @@ body {
   height: 3.5rem;
   border: 1px solid #c9c6c5;
   border-radius: 3.125rem;
-  overflow: hidden;
   background-color: #ffffff;
-  position: relative;
+}
+.content-wrapper .partation-warpper .content-container .container .login-options .with input {
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 0 1.5rem;
+  font-size: 1rem;
+  color: #313030;
+  background: transparent;
+}
+.content-wrapper .partation-warpper .content-container .container .login-options label {
+  position: absolute;
+  left: 1.5rem;
+  top: 0%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  font-size: 1rem;
+  color: #c0c0c0;
+  background: white;
+  opacity: 0;
+  visibility: hidden;
+}
+.content-wrapper .partation-warpper .content-container .container .login-options .with input:not(:-moz-placeholder-shown) + label {
+  visibility: visible; /* Make the label visible */
+  opacity: 1; /* Make the label appear smoothly */
+  transform: translateY(-150%); /* Move the label up */
+  font-size: 0.875rem; /* Optional: smaller font size when active */
+  color: #000000;
+  position: absolute;
+  left: 1.5rem;
+  top: 0%;
+  transform: translateY(-50%);
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  font-size: 1rem;
+  color: #c0c0c0;
+  background: white;
+}
+.content-wrapper .partation-warpper .content-container .container .login-options .with input:focus + label,
+.content-wrapper .partation-warpper .content-container .container .login-options .with input:not(:placeholder-shown) + label {
+  visibility: visible; /* Make the label visible */
+  opacity: 1; /* Make the label appear smoothly */
+  transform: translateY(-150%); /* Move the label up */
+  font-size: 0.875rem; /* Optional: smaller font size when active */
+  color: #000000;
+  position: absolute;
+  left: 1.5rem;
+  top: 0%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  font-size: 1rem;
+  color: #c0c0c0;
+  background: white;
 }
 .content-wrapper .partation-warpper .content-container .container .login-options .RconfirmPassword {
-  border: 1px solid #c9c6c5; /* Default gray border */
-  transition: border 0.3s ease; /* Smooth transition for border changes */
+  border: 1px solid #c9c6c5;
+  transition: border 0.3s ease;
 }
 .content-wrapper .partation-warpper .content-container .container .login-options .RconfirmPassword.green-border {
-  border: 2px solid green; /* Green border when class is added */
+  border: 2px solid green;
 }
 .content-wrapper .partation-warpper .content-container .container .login-options .login {
   margin-top: 1rem;

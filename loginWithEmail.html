@@ -23,17 +23,21 @@
             <div class="login-options">
               <div class="with">
                 <input type="email" placeholder=" Email" />
+                <label for="name">Email</label>
               </div>
               <div class="with password" id="password-container">
-                <input type="password" placeholder="Password" id="password-input" />
-                <div class="hide">
-                    <img src="./assets/hideicon.svg" alt="">
+                <input
+                  type="password"
+                  placeholder="Password"
+                  id="password-input"
+                />
+                <label for="name">Password</label>
+                <div class="hide" id="toggle-password">
+                  <img src="./assets/hideicon.svg" alt="" />
                 </div>
               </div>
             </div>
-            <div class="error">
-                Wrong Password!
-            </div>
+            <div class="error">Wrong Password!</div>
 
             <div class="check-error">
               <div class="check-box">
@@ -50,7 +54,9 @@
               <div class="part2">Or login with</div>
               <div class="part3"></div>
             </div>
-            <div class=" google-login"><img src="./assets/google.svg" alt=""> Continue with Google</div>
+            <div class="google-login">
+              <img src="./assets/google.svg" alt="" /> Continue with Google
+            </div>
           </div>
         </div>
         <div class="image-container">
@@ -59,33 +65,53 @@
       </div>
     </div>
 
-
     <script>
-        const passwordInput = document.getElementById('password-input');
-        const passwordContainer = document.getElementById('password-container');
-        const errorMessage = document.getElementById('password-error');
+      const passwordInput = document.getElementById("password-input");
+      const passwordContainer = document.getElementById("password-container");
+      const errorMessage = document.getElementById("password-error");
+      const togglePassword = document.getElementById("toggle-password");
+      function showError() {
+        passwordContainer.style.border = "1px solid #e8505b";
+
+        const passwordValue = passwordInput.value;
+        const maskedValue = "*".repeat(passwordValue.length);
+        passwordInput.value = maskedValue;
+        passwordInput.style.color = "#e8505b";
+
+        errorMessage.style.display = "block";
+      }
+      togglePassword.addEventListener("click", () => {
       
-        function showError() {
-       
-          passwordContainer.style.border = '1px solid #e8505b';
-      
-     
-          const passwordValue = passwordInput.value;
-          const maskedValue = '*'.repeat(passwordValue.length);
-          passwordInput.value = maskedValue;
-          passwordInput.style.color = '#e8505b';
-      
-       
-          errorMessage.style.display = 'block';
+        if (passwordInput.type === "password") {
+          passwordInput.type = "text";
+        //   togglePassword.innerHTML =
+        //     '<img src="./assets/showicon.svg" alt="show password">';
+        } else {
+          passwordInput.type = "password"; 
+        //   togglePassword.innerHTML =
+        //     '<img src="./assets/hideicon.svg" alt="hide password">'; 
         }
-      
-      const loginButton = document.querySelector('.login-button');
-        loginButton.addEventListener('click', (e) => {
-          e.preventDefault(); 
-          showError();
+      });
+      const loginButton = document.querySelector(".login-button");
+      loginButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        showError();
+      });
+
+      const inputs = document.querySelectorAll(".with input");
+
+      inputs.forEach((input) => {
+        input.addEventListener("input", () => {
+          const label = input.nextElementSibling; // Assuming the label is immediately after the input
+          if (input.value.trim() !== "") {
+            label.style.visibility = "visible";
+            label.style.opacity = "1";
+          } else {
+            label.style.visibility = "hidden";
+            label.style.opacity = "0";
+          }
         });
-     
-      </script>
-      
+      });
+    </script>
   </body>
 </html>
