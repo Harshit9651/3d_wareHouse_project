@@ -56,10 +56,12 @@ body {
           display: flex;
           align-items: center;
           flex-direction: column;
+        
           width: 100%;
           background-color: rgb(255, 255, 255);
           height: 5rem;
           margin-bottom: 1.5rem;
+         
           .login {
             font-family: Inter;
             font-size: 36px;
@@ -70,17 +72,37 @@ body {
             text-decoration-skip-ink: none;
             color: #1c1b1c;
             margin-bottom: 1rem;
+           
+          }
+          .forgot-password {
+            font-family: Inter;
+            font-size: 36px;
+            font-weight: 600;
+            line-height: 46.8px;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: #1C1B1C;
+         
+
+
           }
           .paragraph {
-            //styleName: Body Big/R;
+            
+         width: 100%;
             font-family: Inter;
             font-size: 15px;
             font-weight: 400;
             line-height: 23.4px;
-            text-align: left;
+            text-align: center;
             text-underline-position: from-font;
             text-decoration-skip-ink: none;
             color: #484646;
+            .forgot-paragraph{
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              
+            }
 
             span {
               //styleName: Body Big/SB;
@@ -135,6 +157,8 @@ body {
             background-color: #ffffff;
             position: relative;
           }
+     
+        
           .password {
             position: relative;
           }
@@ -180,15 +204,15 @@ body {
           line-height: 15.6px;
           color: #e8505b;
         }
-        
+
         #password-input:focus {
           outline: none;
         }
-        
+
         .with.password {
           transition: border 0.3s ease; // Smooth transition for border color
         }
-        
+
         .terms {
           margin-top: 2rem;
           width: 100%;
@@ -227,7 +251,7 @@ body {
           text-align: left;
           text-underline-position: from-font;
           text-decoration-skip-ink: none;
-         color: #e8505b;
+          color: #e8505b;
           width: 100%;
         }
 

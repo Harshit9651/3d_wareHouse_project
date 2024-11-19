@@ -70,16 +70,32 @@ body {
   color: #1c1b1c;
   margin-bottom: 1rem;
 }
+.content-wrapper .partation-warpper .content-container .container .login-wrapper .forgot-password {
+  font-family: Inter;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 46.8px;
+  text-underline-position: from-font;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+  color: #1C1B1C;
+}
 .content-wrapper .partation-warpper .content-container .container .login-wrapper .paragraph {
+  width: 100%;
   font-family: Inter;
   font-size: 15px;
   font-weight: 400;
   line-height: 23.4px;
-  text-align: left;
+  text-align: center;
   text-underline-position: from-font;
   -webkit-text-decoration-skip-ink: none;
           text-decoration-skip-ink: none;
   color: #484646;
+}
+.content-wrapper .partation-warpper .content-container .container .login-wrapper .paragraph .forgot-paragraph {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .content-wrapper .partation-warpper .content-container .container .login-wrapper .paragraph span {
   font-family: Inter;
