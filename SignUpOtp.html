@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./scss/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="content-wrapper">
+      <div class="heading">
+        <img src="./assets/3dmodel.svg" alt="" />
+      </div>
+      <div class="partation-warpper">
+        <div class="content-container">
+          <div class="container page3">
+            <div class="login-wrapper forgot">
+              <div class="login forgot-password">Set Password</div>
+              <div class="paragraph forgot-paragraph">
+                Make sure to use a strong password!
+              </div>
+            </div>
+            <div class="login-options">
+              <div class="with Rpassword">
+                <input type="password" placeholder="Password" id="password-input" />
+                <label for="name">Password</label>
+             
+                <div class="hide" id="toggle-password">
+                    <img src="./assets/hideicon.svg" alt="" />
+                  </div>
+              
+                </div>
+              <div class="with RconfirmPassword"  id="password-container">
+                <input
+                id="password-confirm"
+                  type="password"
+                  placeholder="Confirm password"
+                />
+                <label for="name">Confirm password</label>
+                <div class="hide" id="toggle-password">
+                    <img src="./assets/hideicon.svg" alt="" />
+                  </div>
+              </div>
+
+              <div class="success-message">
+                
+                Passwords Match!
+              </div>
+              <div class="with login" id="submit-btn">Set Password</div>
+            </div>
+          </div>
+        </div>
+        <div class="image-container">
+          <img src="./assets/loginpageimage.svg" alt="" />
+        </div>
+      </div>
+
+    </div>
+
+ <script>const passwordInput = document.getElementById("password-input");
+        const confirmPasswordInput = document.getElementById("password-confirm");
+        const submitBtn = document.getElementById("submit-btn");
+        const passwordContainer = document.getElementById("password-container");
+        const successMessage = document.querySelector(".success-message");
+        
+        confirmPasswordInput.addEventListener("input", () => {
+          if (
+            passwordInput.value === confirmPasswordInput.value &&
+            passwordInput.value.trim() !== ""
+          ) {
+            confirmPasswordInput.style.color = "#06C270";
+            passwordContainer.style.border = "2px solid #06C270";
+            submitBtn.classList.add("active");
+        
+            if (successMessage) {
+              successMessage.style.display = "flex";
+            }
+          } else {
+            confirmPasswordInput.style.color = "";
+            passwordContainer.style.border = "";
+            submitBtn.classList.remove("active");
+        
+            if (successMessage) {
+              successMessage.style.display = "none";
+            }
+          }
+        });
+        
+        submitBtn.addEventListener("click", () => {
+          if (submitBtn.classList.contains("active")) {
+            const passwordValue = confirmPasswordInput.value;
+            const maskedValue = "*".repeat(passwordValue.length);
+            confirmPasswordInput.value = maskedValue;
+            confirmPasswordInput.type = "text"; 
+            setTimeout(() => {
+              confirmPasswordInput.type = "password";
+            }, 0); 
+          }
+        });
+        </script>
+  </body>
+</html>
