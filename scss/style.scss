@@ -606,10 +606,17 @@ body {
       .page3 {
         margin-top: 1rem;
         height: calc(100% - 5rem);
-        .header {
+        .paragraph{
           display: flex;
-          gap: 0.4rem;
+          justify-content: center;
+          flex-direction: column;
+          align-items: center;
+          .header {
+            display: flex;
+            gap: 0.4rem;
+          }
         }
+      
         .resend-otp {
           display: flex;
           height: 1rem;

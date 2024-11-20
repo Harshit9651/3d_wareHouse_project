@@ -627,7 +627,13 @@ body {
   margin-top: 1rem;
   height: calc(100% - 5rem);
 }
-.content-wrapper .partation-warpper .content-container .page3 .header {
+.content-wrapper .partation-warpper .content-container .page3 .paragraph {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.content-wrapper .partation-warpper .content-container .page3 .paragraph .header {
   display: flex;
   gap: 0.4rem;
 }
