@@ -5,7 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./scss/style.css" />
     <link rel="stylesheet" href="./scss/signupotp.css" />
-    <title>Document</title>
+    <title>Enter OTP</title>
+    <style>
+      .otp-wrapper {
+        height: 100%;
+        width: 60%;
+        display: flex;
+        justify-content: space-around;
+      }
+      .otp-input {
+        height: 3.5rem;
+        width: 3.5rem;
+        padding: 12px 16px;
+        border: 1px solid #c9c6c5;
+        text-align: center;
+        font-family: Inter, sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 18.2px;
+        color: #313030;
+      }
+      .otp-input::placeholder {
+        color: #adaaaa;
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
     <div class="content-wrapper">
@@ -16,7 +40,7 @@
         <div class="content-container">
           <div class="container page3">
             <div class="login-wrapper forgot">
-              <div class="login forgot-password">Enter OTP</div>
+              <div class="login forgot-password">Verify your Account</div>
               <div class="paragraph forgot-paragraph">
                 We’ve sent an OTP to <span>shivam.itankar@gmail.com</span>
               </div>
@@ -59,7 +83,22 @@
     </div>
 
     <script>
+      // Functionality to automatically move focus to the next OTP input field
+      const otpInputs = document.querySelectorAll('.otp-input');
 
+      otpInputs.forEach((input, index) => {
+        input.addEventListener('input', (e) => {
+          if (input.value.length === 1 && index < otpInputs.length - 1) {
+            otpInputs[index + 1].focus();
+          }
+        });
+
+        input.addEventListener('keydown', (e) => {
+          if (e.key === 'Backspace' && input.value.length === 0 && index > 0) {
+            otpInputs[index - 1].focus();
+          }
+        });
+      });
     </script>
   </body>
 </html>
