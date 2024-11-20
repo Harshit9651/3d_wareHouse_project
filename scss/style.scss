@@ -116,7 +116,6 @@ body {
         }
         .login-options {
           width: 100;
-
           display: flex;
           flex-direction: column;
           gap: 2rem;
@@ -150,7 +149,6 @@ body {
             height: 3.5rem;
             border: 1px solid #c9c6c5;
             border-radius: 3.125rem;
-            background-color: #ffffff;
           }
           .with input {
             border: none;
@@ -161,7 +159,34 @@ body {
             color: #313030;
             background: transparent;
           }
-
+          .otp-wrapper {
+            height: 100%;
+            width: 60%;
+         
+            display: flex;
+            justify-content: space-around;
+            .otp-input {
+              height: 3.5rem;
+              width: 3.5rem;
+              padding: 12px 16px;
+              border: 1px solid #c9c6c5;
+              text-align: center; 
+              font-family: Inter;
+              font-size: 14px;
+              font-weight: 400;
+              line-height: 18.2px;
+              color: #313030;
+          
+              &::placeholder {
+                color: #adaaaa; /* Placeholder color */
+                font-family: Inter;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 18.2px;
+                text-align: center;
+              }
+            }
+          }
           label {
             position: absolute;
             left: 1.5rem;
@@ -175,6 +200,7 @@ body {
             opacity: 0;
             visibility: hidden;
           }
+
           .with input:focus + label,
           .with input:not(:placeholder-shown) + label {
             visibility: visible;
@@ -277,10 +303,109 @@ body {
           line-height: 15.6px;
           color: #e8505b;
         }
-
-        #password-input:focus {
-          outline: none;
+        .error-message {
+          display: none;
+          padding-left: 1rem;
+          font-family: Inter, sans-serif;
+          font-size: 12px;
+          font-weight: 400;
+          line-height: 15.6px;
+          color: #e8505b;
         }
+        
+        .error-active .error-message {
+          display: block;
+        }
+        
+        .with {
+          position: relative;
+          display: flex;
+          align-items: center;
+          width: 100%;
+          height: 3.5rem;
+          border: 1px solid #c9c6c5;
+          border-radius: 3.125rem;
+          transition: border 0.3s ease;
+        }
+        
+        .with input {
+          flex: 1;
+          padding: 0 1.5rem;
+          font-size: 1rem;
+          border: none;
+          outline: none;
+          background: transparent;
+        }
+        
+        .with input:focus + label,
+        .with input:not(:placeholder-shown) + label {
+          visibility: visible;
+          opacity: 1;
+          transform: translateY(-150%);
+          font-size: 0.875rem;
+          color: #000000;
+        }
+        
+        .with label {
+          position: absolute;
+          left: 1.5rem;
+          top: 50%;
+          transform: translateY(-50%);
+          transition: all 0.3s ease;
+          font-size: 1rem;
+          color: #c0c0c0;
+          background: white;
+          opacity: 0;
+          visibility: hidden;
+        }
+        
+        .error-active .with {
+          border-color: #e8505b;
+        }
+        
+        .error-active input {
+          color: #e8505b;
+        }
+        
+        .login-button {
+          margin-top: 2rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 3rem;
+          background: #683cd3;
+          color: white;
+          border-radius: 3.125rem;
+          cursor: pointer;
+          &.active {
+            background-color: #683cd3;
+            color: #fff;
+            cursor: pointer;
+          }
+        
+        }
+
+        
+        .password-visible .password-field {
+          color: #313030;
+        }
+        
+        .password-visible .hide img {
+          content: url("./assets/showicon.svg");
+        }
+
+
+      &.error {
+        border: 1px solid #e8505b;
+
+        input {
+          color: #e8505b;
+        }
+      }  &.valid {
+        border: 1px solid #06c270;
+      }
+        
 
         .with.password {
           transition: border 0.3s ease;
@@ -288,6 +413,28 @@ body {
         .RconfirmPassword {
           border: 1px solid green;
         }
+        .input-wrapper.success {
+          border: 1px solid #06c270;
+        }
+
+        .error-message {
+          display: none;
+          color: #e8505b;
+          font-size: 12px;
+          padding-left: 1rem;
+        }
+
+        .success-message {
+          display: none;
+          color: #06c270;
+          font-size: 12px;
+          padding-left: 1rem;
+        }
+
+        .success-visible {
+          display: block;
+        }
+
 
         .terms {
           margin-top: 2rem;
@@ -360,7 +507,6 @@ body {
             display: flex;
             align-items: center;
             justify-content: flex-end;
-
             font-family: Inter;
             font-size: 14px;
             font-weight: 400;
@@ -387,9 +533,14 @@ body {
           text-align: left;
           text-underline-position: from-font;
           text-decoration-skip-ink: none;
-          color: #313030;
-          background: #683cd3;
-          color: white;
+          background: #D2D1D3;
+          color: #8F8C91;
+        
+          &.active {
+            background: #683cd3;
+            color: #ffffff;
+            cursor: pointer;
+          }
         }
         .signin-with {
           margin-top: 2rem;
@@ -444,6 +595,10 @@ body {
         }
       }
       .page2 {
+        margin-top: 1rem;
+        height: calc(100% - 5rem);
+      }
+      .page3 {
         margin-top: 1rem;
         height: calc(100% - 5rem);
       }

@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./scss/style.css" />
+    <link rel="stylesheet" href="./scss/signupotp.css" />
     <title>Document</title>
   </head>
   <body>
@@ -17,62 +18,48 @@
             <div class="login-wrapper forgot">
               <div class="login forgot-password">Enter OTP</div>
               <div class="paragraph forgot-paragraph">
-                We’ve sent an OTP to  <span>shivam.itankar@gmail.com</span></div>
-            </div>
-            <div class="login-options">
-              <div class="otp-wrapper">
-                <input type="text" maxlength="1" class="otp-input" />
-                <input type="text" maxlength="1" class="otp-input" />
-                <input type="text" maxlength="1" class="otp-input" />
-                <input type="text" maxlength="1" class="otp-input" />
+                We’ve sent an OTP to <span>shivam.itankar@gmail.com</span>
               </div>
-                <div class="with login"  id="submit-btn">
-                    Send OTP
-                  </div>
-                  
-                </div>
-     
-         
-
-            
-
+            </div>
+            <div class="login-options signup-otp">
+              <div class="otp-wrapper">
+                <input
+                  type="text"
+                  maxlength="1"
+                  class="otp-input"
+                  placeholder="-"
+                />
+                <input
+                  type="text"
+                  maxlength="1"
+                  class="otp-input"
+                  placeholder="-"
+                />
+                <input
+                  type="text"
+                  maxlength="1"
+                  class="otp-input"
+                  placeholder="-"
+                />
+                <input
+                  type="text"
+                  maxlength="1"
+                  class="otp-input"
+                  placeholder="-"
+                />
+              </div>
+              <div class="with login sendotp" id="submit-btn">Send OTP</div>
+            </div>
           </div>
         </div>
         <div class="image-container">
           <img src="./assets/loginpageimage.svg" alt="" />
         </div>
       </div>
-
     </div>
 
     <script>
-        const emailInput = document.getElementById("email-input");
-        const submitBtn = document.getElementById("submit-btn");
-  
-        emailInput.addEventListener("input", () => {
-          if (emailInput.value.trim() !== "") {
-        
-            submitBtn.classList.add("active");
-          } else {
-            submitBtn.classList.remove("active");
-          }
-        });
-        
-        const inputs = document.querySelectorAll('.with input');
 
-inputs.forEach(input => {
-  input.addEventListener('input', () => {
-    const label = input.nextElementSibling; // Assuming the label is immediately after the input
-    if (input.value.trim() !== "") {
-      label.style.visibility = 'visible';
-      label.style.opacity = '1';
-    } else {
-      label.style.visibility = 'hidden';
-      label.style.opacity = '0';
-    }
-  });
-});
-  </script>
-      
+    </script>
   </body>
 </html>

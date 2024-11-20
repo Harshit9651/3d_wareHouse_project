@@ -149,7 +149,6 @@ body {
   height: 3.5rem;
   border: 1px solid #c9c6c5;
   border-radius: 3.125rem;
-  background-color: #ffffff;
 }
 .content-wrapper .partation-warpper .content-container .container .login-options .with input {
   border: none;
@@ -159,6 +158,40 @@ body {
   font-size: 1rem;
   color: #313030;
   background: transparent;
+}
+.content-wrapper .partation-warpper .content-container .container .login-options .otp-wrapper {
+  height: 100%;
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+}
+.content-wrapper .partation-warpper .content-container .container .login-options .otp-wrapper .otp-input {
+  height: 3.5rem;
+  width: 3.5rem;
+  padding: 12px 16px;
+  border: 1px solid #c9c6c5;
+  text-align: center;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18.2px;
+  color: #313030;
+}
+.content-wrapper .partation-warpper .content-container .container .login-options .otp-wrapper .otp-input::-moz-placeholder {
+  color: #adaaaa; /* Placeholder color */
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18.2px;
+  text-align: center;
+}
+.content-wrapper .partation-warpper .content-container .container .login-options .otp-wrapper .otp-input::placeholder {
+  color: #adaaaa; /* Placeholder color */
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18.2px;
+  text-align: center;
 }
 .content-wrapper .partation-warpper .content-container .container .login-options label {
   position: absolute;
@@ -174,10 +207,10 @@ body {
   visibility: hidden;
 }
 .content-wrapper .partation-warpper .content-container .container .login-options .with input:not(:-moz-placeholder-shown) + label {
-  visibility: visible; /* Make the label visible */
-  opacity: 1; /* Make the label appear smoothly */
-  transform: translateY(-150%); /* Move the label up */
-  font-size: 0.875rem; /* Optional: smaller font size when active */
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(-150%);
+  font-size: 0.875rem;
   color: #000000;
   position: absolute;
   left: 1.5rem;
@@ -192,10 +225,10 @@ body {
 }
 .content-wrapper .partation-warpper .content-container .container .login-options .with input:focus + label,
 .content-wrapper .partation-warpper .content-container .container .login-options .with input:not(:placeholder-shown) + label {
-  visibility: visible; /* Make the label visible */
-  opacity: 1; /* Make the label appear smoothly */
-  transform: translateY(-150%); /* Move the label up */
-  font-size: 0.875rem; /* Optional: smaller font size when active */
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(-150%);
+  font-size: 0.875rem;
   color: #000000;
   position: absolute;
   left: 1.5rem;
@@ -245,16 +278,16 @@ body {
 .content-wrapper .partation-warpper .content-container .container .login-options input {
   width: 100%;
   height: 100%;
-  border: none; /* Remove input border */
-  outline: none; /* Remove input outline */
-  font-family: Inter, sans-serif; /* Match font family */
-  font-size: 16px; /* Match font size */
-  padding: 0 1rem; /* Add horizontal padding for input text */
-  box-sizing: border-box; /* Ensure padding doesn't overflow */
-  color: #313030; /* Text color */
+  border: none;
+  outline: none;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  color: #313030;
 }
 .content-wrapper .partation-warpper .content-container .container .login-options input::-moz-placeholder {
-  color: #c0c0c0; /* Placeholder text color */
+  color: #c0c0c0;
   font-size: 14px;
   font-family: "Inter";
   font-size: 14px;
@@ -266,7 +299,7 @@ body {
   color: #adaaaa;
 }
 .content-wrapper .partation-warpper .content-container .container .login-options input::placeholder {
-  color: #c0c0c0; /* Placeholder text color */
+  color: #c0c0c0;
   font-size: 14px;
   font-family: "Inter";
   font-size: 14px;
@@ -300,14 +333,124 @@ body {
   line-height: 15.6px;
   color: #e8505b;
 }
-.content-wrapper .partation-warpper .content-container .container #password-input:focus {
+.content-wrapper .partation-warpper .content-container .container .error-message {
+  display: none;
+  padding-left: 1rem;
+  font-family: Inter, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15.6px;
+  color: #e8505b;
+}
+.content-wrapper .partation-warpper .content-container .container .error-active .error-message {
+  display: block;
+}
+.content-wrapper .partation-warpper .content-container .container .with {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 3.5rem;
+  border: 1px solid #c9c6c5;
+  border-radius: 3.125rem;
+  transition: border 0.3s ease;
+}
+.content-wrapper .partation-warpper .content-container .container .with input {
+  flex: 1;
+  padding: 0 1.5rem;
+  font-size: 1rem;
+  border: none;
   outline: none;
+  background: transparent;
+}
+.content-wrapper .partation-warpper .content-container .container .with input:not(:-moz-placeholder-shown) + label {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(-150%);
+  font-size: 0.875rem;
+  color: #000000;
+}
+.content-wrapper .partation-warpper .content-container .container .with input:focus + label,
+.content-wrapper .partation-warpper .content-container .container .with input:not(:placeholder-shown) + label {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(-150%);
+  font-size: 0.875rem;
+  color: #000000;
+}
+.content-wrapper .partation-warpper .content-container .container .with label {
+  position: absolute;
+  left: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  color: #c0c0c0;
+  background: white;
+  opacity: 0;
+  visibility: hidden;
+}
+.content-wrapper .partation-warpper .content-container .container .error-active .with {
+  border-color: #e8505b;
+}
+.content-wrapper .partation-warpper .content-container .container .error-active input {
+  color: #e8505b;
+}
+.content-wrapper .partation-warpper .content-container .container .login-button {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 3rem;
+  background: #683cd3;
+  color: white;
+  border-radius: 3.125rem;
+  cursor: pointer;
+}
+.content-wrapper .partation-warpper .content-container .container .login-button.active {
+  background-color: #683cd3;
+  color: #fff;
+  cursor: pointer;
+}
+.content-wrapper .partation-warpper .content-container .container .password-visible .password-field {
+  color: #313030;
+}
+.content-wrapper .partation-warpper .content-container .container .password-visible .hide img {
+  content: url("./assets/showicon.svg");
+}
+.content-wrapper .partation-warpper .content-container .container.error {
+  border: 1px solid #e8505b;
+}
+.content-wrapper .partation-warpper .content-container .container.error input {
+  color: #e8505b;
+}
+.content-wrapper .partation-warpper .content-container .container.valid {
+  border: 1px solid #06c270;
 }
 .content-wrapper .partation-warpper .content-container .container .with.password {
   transition: border 0.3s ease;
 }
 .content-wrapper .partation-warpper .content-container .container .RconfirmPassword {
   border: 1px solid green;
+}
+.content-wrapper .partation-warpper .content-container .container .input-wrapper.success {
+  border: 1px solid #06c270;
+}
+.content-wrapper .partation-warpper .content-container .container .error-message {
+  display: none;
+  color: #e8505b;
+  font-size: 12px;
+  padding-left: 1rem;
+}
+.content-wrapper .partation-warpper .content-container .container .success-message {
+  display: none;
+  color: #06c270;
+  font-size: 12px;
+  padding-left: 1rem;
+}
+.content-wrapper .partation-warpper .content-container .container .success-visible {
+  display: block;
 }
 .content-wrapper .partation-warpper .content-container .container .terms {
   margin-top: 2rem;
@@ -408,9 +551,13 @@ body {
   text-underline-position: from-font;
   -webkit-text-decoration-skip-ink: none;
           text-decoration-skip-ink: none;
-  color: #313030;
+  background: #D2D1D3;
+  color: #8F8C91;
+}
+.content-wrapper .partation-warpper .content-container .container .login-button.active {
   background: #683cd3;
-  color: white;
+  color: #ffffff;
+  cursor: pointer;
 }
 .content-wrapper .partation-warpper .content-container .container .signin-with {
   margin-top: 2rem;
@@ -465,6 +612,10 @@ body {
   color: #313030;
 }
 .content-wrapper .partation-warpper .content-container .page2 {
+  margin-top: 1rem;
+  height: calc(100% - 5rem);
+}
+.content-wrapper .partation-warpper .content-container .page3 {
   margin-top: 1rem;
   height: calc(100% - 5rem);
 }

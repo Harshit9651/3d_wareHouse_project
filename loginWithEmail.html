@@ -21,28 +21,28 @@
               </div>
             </div>
             <div class="login-options">
-              <div class="with">
+              <div class="with email-input">
                 <input type="email" placeholder=" Email" />
-                <label for="name">Email</label>
+                <label>Email</label>
               </div>
-              <div class="with password" id="password-container">
+              <div class="with password-input">
                 <input
                   type="password"
                   placeholder="Password"
-                  id="password-input"
+                  class="password-field"
                 />
-                <label for="name">Password</label>
-                <div class="hide" id="toggle-password">
+                <label>Password</label>
+                <div class="hide">
                   <img src="./assets/hideicon.svg" alt="" />
                 </div>
               </div>
             </div>
-            <div class="error">Wrong Password!</div>
+            <div class="error-message">Wrong Password!</div>
 
             <div class="check-error">
               <div class="check-box">
                 <div class="check-input">
-                  <input type="checkbox" name="" id="" />
+                  <input type="checkbox" />
                 </div>
                 <div class="text">Remember me</div>
               </div>
@@ -64,54 +64,5 @@
         </div>
       </div>
     </div>
-
-    <script>
-      const passwordInput = document.getElementById("password-input");
-      const passwordContainer = document.getElementById("password-container");
-      const errorMessage = document.getElementById("password-error");
-      const togglePassword = document.getElementById("toggle-password");
-      function showError() {
-        passwordContainer.style.border = "1px solid #e8505b";
-
-        const passwordValue = passwordInput.value;
-        const maskedValue = "*".repeat(passwordValue.length);
-        passwordInput.value = maskedValue;
-        passwordInput.style.color = "#e8505b";
-
-        errorMessage.style.display = "block";
-      }
-      togglePassword.addEventListener("click", () => {
-      
-        if (passwordInput.type === "password") {
-          passwordInput.type = "text";
-        //   togglePassword.innerHTML =
-        //     '<img src="./assets/showicon.svg" alt="show password">';
-        } else {
-          passwordInput.type = "password"; 
-        //   togglePassword.innerHTML =
-        //     '<img src="./assets/hideicon.svg" alt="hide password">'; 
-        }
-      });
-      const loginButton = document.querySelector(".login-button");
-      loginButton.addEventListener("click", (e) => {
-        e.preventDefault();
-        showError();
-      });
-
-      const inputs = document.querySelectorAll(".with input");
-
-      inputs.forEach((input) => {
-        input.addEventListener("input", () => {
-          const label = input.nextElementSibling; // Assuming the label is immediately after the input
-          if (input.value.trim() !== "") {
-            label.style.visibility = "visible";
-            label.style.opacity = "1";
-          } else {
-            label.style.visibility = "hidden";
-            label.style.opacity = "0";
-          }
-        });
-      });
-    </script>
   </body>
 </html>
