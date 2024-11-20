@@ -17,22 +17,25 @@
             <div class="login-wrapper forgot">
               <div class="login forgot-password">Enter OTP</div>
               <div class="paragraph forgot-paragraph">
-                We’ve sent an OTP to <span>shivam.itankar@gmail.com </span></div>
+                We’ve sent an OTP to  <span>shivam.itankar@gmail.com</span></div>
             </div>
             <div class="login-options">
-              <div class="with Rpassword">
-                <input type="password" placeholder="Password" id="password-input" />
-                <label for="name">Password</label>
-             
-                <div class="hide" id="toggle-password">
-                    <img src="./assets/hideicon.svg" alt="" />
+              <div class="otp-wrapper">
+                <input type="text" maxlength="1" class="otp-input" />
+                <input type="text" maxlength="1" class="otp-input" />
+                <input type="text" maxlength="1" class="otp-input" />
+                <input type="text" maxlength="1" class="otp-input" />
+              </div>
+                <div class="with login"  id="submit-btn">
+                    Send OTP
                   </div>
-              
+                  
                 </div>
+     
          
 
-              <div class="with login" id="submit-btn">Continue</div>
-            </div>
+            
+
           </div>
         </div>
         <div class="image-container">
@@ -42,46 +45,34 @@
 
     </div>
 
- <script>const passwordInput = document.getElementById("password-input");
-        const confirmPasswordInput = document.getElementById("password-confirm");
+    <script>
+        const emailInput = document.getElementById("email-input");
         const submitBtn = document.getElementById("submit-btn");
-        const passwordContainer = document.getElementById("password-container");
-        const successMessage = document.querySelector(".success-message");
+  
+        emailInput.addEventListener("input", () => {
+          if (emailInput.value.trim() !== "") {
         
-        confirmPasswordInput.addEventListener("input", () => {
-          if (
-            passwordInput.value === confirmPasswordInput.value &&
-            passwordInput.value.trim() !== ""
-          ) {
-            confirmPasswordInput.style.color = "#06C270";
-            passwordContainer.style.border = "2px solid #06C270";
             submitBtn.classList.add("active");
-        
-            if (successMessage) {
-              successMessage.style.display = "flex";
-            }
           } else {
-            confirmPasswordInput.style.color = "";
-            passwordContainer.style.border = "";
             submitBtn.classList.remove("active");
-        
-            if (successMessage) {
-              successMessage.style.display = "none";
-            }
           }
         });
         
-        submitBtn.addEventListener("click", () => {
-          if (submitBtn.classList.contains("active")) {
-            const passwordValue = confirmPasswordInput.value;
-            const maskedValue = "*".repeat(passwordValue.length);
-            confirmPasswordInput.value = maskedValue;
-            confirmPasswordInput.type = "text"; 
-            setTimeout(() => {
-              confirmPasswordInput.type = "password";
-            }, 0); 
-          }
-        });
-        </script>
+        const inputs = document.querySelectorAll('.with input');
+
+inputs.forEach(input => {
+  input.addEventListener('input', () => {
+    const label = input.nextElementSibling; // Assuming the label is immediately after the input
+    if (input.value.trim() !== "") {
+      label.style.visibility = 'visible';
+      label.style.opacity = '1';
+    } else {
+      label.style.visibility = 'hidden';
+      label.style.opacity = '0';
+    }
+  });
+});
+  </script>
+      
   </body>
 </html>

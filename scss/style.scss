@@ -161,6 +161,7 @@ body {
             color: #313030;
             background: transparent;
           }
+
           label {
             position: absolute;
             left: 1.5rem;
@@ -176,11 +177,11 @@ body {
           }
           .with input:focus + label,
           .with input:not(:placeholder-shown) + label {
-            visibility: visible; /* Make the label visible */
-            opacity: 1; /* Make the label appear smoothly */
-            transform: translateY(-150%); /* Move the label up */
-            font-size: 0.875rem; /* Optional: smaller font size when active */
-            color: #000000; 
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(-150%);
+            font-size: 0.875rem;
+            color: #000000;
             position: absolute;
             left: 1.5rem;
             top: 0%;
@@ -190,8 +191,6 @@ body {
             font-size: 1rem;
             color: #c0c0c0;
             background: white;
-            
-            
           }
           .RconfirmPassword {
             border: 1px solid #c9c6c5;
@@ -234,20 +233,18 @@ body {
           input {
             width: 100%;
             height: 100%;
-            border: none; /* Remove input border */
-            outline: none; /* Remove input outline */
-            font-family: Inter, sans-serif; /* Match font family */
-            font-size: 16px; /* Match font size */
-            padding: 0 1rem; /* Add horizontal padding for input text */
-            box-sizing: border-box; /* Ensure padding doesn't overflow */
-            color: #313030; /* Text color */
+            border: none;
+            outline: none;
+            font-family: Inter, sans-serif;
+            font-size: 16px;
+            padding: 0 1rem;
+            box-sizing: border-box;
+            color: #313030;
           }
 
           input::placeholder {
-            color: #c0c0c0; /* Placeholder text color */
+            color: #c0c0c0;
             font-size: 14px;
-
-            //styleName: Body Medium/R;
             font-family: "Inter";
             font-size: 14px;
             font-weight: 400;
@@ -270,8 +267,9 @@ body {
             color: #06c270;
           }
         }
+
         .error {
-          display: none; // Hide error initially
+          display: none;
           padding-left: 1rem;
           font-family: Inter;
           font-size: 12px;
@@ -285,7 +283,7 @@ body {
         }
 
         .with.password {
-          transition: border 0.3s ease; // Smooth transition for border color
+          transition: border 0.3s ease;
         }
         .RconfirmPassword {
           border: 1px solid green;
@@ -307,7 +305,6 @@ body {
           color: #adaaaa;
 
           span {
-            //styleName: Body Medium/R;
             font-family: Inter;
             font-size: 14px;
             font-weight: 400;
@@ -460,5 +457,4 @@ body {
       }
     }
   }
-  
 }
