@@ -1,0 +1,435 @@
+<% const signupUrl='/oauth2/v1/interaction/' + details.uuid + '/' + 'signup' ;
+const forgotPasswordUrl='/oauth2/v1/interaction/' + details.uuid + '/' +
+'forgot-password' ; var showEye=false; %>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Page Title</title>
+
+  <!-- Adding the CDN for intl-tel-input -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.19/build/css/intlTelInput.css"
+  />
+</head>
+<body onload="defaultEye()">
+  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.19/build/js/intlTelInput.min.js"></script>
+
+  <script>
+    function getCookie(cname) {
+      let name = cname + "=";
+      let decodedCookie = decodeURIComponent(document.cookie);
+      let ca = decodedCookie.split(";");
+      for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == " ") {
+          c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+      return "";
+    }
+
+    function onSignup(client) {
+      if (client == "foyrcommunity") {
+        return "https://accounts.foyr.com/oauth2/v1/auth?client_id=foyrcommunity&scope=openid%20profile&response_type=code&redirect_uri=https://community.foyr.com/callback/&state=eyJzdGF0ZSI6Imh0dHBzOi8vY29tbXVuaXR5LmZveXIuY29tL2xvZ2luL2NhbGxiYWNrIn0=&utm_source=newsignup&utm_campaign=prod&utm_medium=organic&type=signup";
+      }
+
+      if (client == "foyrboost") {
+        return "https://accounts.foyr.com/oauth2/v1/auth?client_id=foyrboost&scope=openid%20profile&response_type=code&redirect_uri=https://boost.foyr.com/callback/&state=4zMhyYUXoW&utm_source=newsignup&utm_campaign=prod&utm_medium=organic&type=signup";
+      }
+
+      return "https://accounts.foyr.com/oauth2/v1/auth?client_id=neo&scope=openid%20profile&response_type=code&redirect_uri=https://neo.foyr.com/login/callback&state=eyJzdGF0ZSI6Imh0dHBzOi8vbmVvLmZveXIuY29tL2xvZ2luL2NhbGxiYWNrIn0=&utm_source=newsignup&utm_campaign=prod&utm_medium=organic&type=signup";
+    }
+
+    const defaultEye = function () {
+      document.getElementById("hidden-eye").style.display = "block";
+      document.getElementById("show-eye").style.display = "none";
+    };
+
+    const showPassword = function () {
+      var x;
+      x = document.getElementById("password-input");
+      if (x.type === "password") {
+        document.getElementById("hidden-eye").style.display = "none";
+        document.getElementById("show-eye").style.display = "block";
+        x.type = "text";
+        showEye = true;
+      } else {
+        x.type = "password";
+        document.getElementById("hidden-eye").style.display = "block";
+        document.getElementById("show-eye").style.display = "none";
+        showEye = false;
+      }
+    };
+
+    const showPasswordText = function () {
+      if (document.querySelector("#password input").type == "password")
+        document.querySelector("#password input").type = "text";
+      else if (document.querySelector("#password input").type == "text")
+        document.querySelector("#password input").type = "password";
+    };
+
+    const avoidSpace = function (event) {
+      let k = event ? event.which : window.event.keyCode;
+      if (k == 32) return false;
+    };
+
+    const validateForm = function () {
+      let password = document.getElementById("password-input").value;
+      let email = document.getElementById("email-input").value;
+      let submit = document.getElementById("submit-button");
+      if (email && password) {
+        submit.classList.remove("disabled");
+      } else {
+        if (submit.className.indexOf("disabled") === -1) {
+          submit.classList.add("disabled");
+        }
+      }
+    };
+
+    function onSignIn(googleUser) {
+      var authResponse = googleUser.getAuthResponse();
+      window.open(
+        `<%-details.googleUrl%>&code=${authResponse.id_token}`,
+        "_self"
+      );
+    }
+
+    gapi.load("auth2", function () {
+      // Retrieve the singleton for the GoogleAuth library and set up the client.
+      auth2 = gapi.auth2.init({
+        client_id:
+          "46521551054-dq2dd588gmoirnbdu5th5s74agfid1v6.apps.googleusercontent.com",
+        cookiepolicy: "single_host_origin",
+        // Request scopes in addition to 'profile' and 'email'
+        //scope: 'additional_scope'
+      });
+      auth2.attachClickHandler(
+        document.getElementById("googleBTN"),
+        {},
+        onSignIn
+      );
+    });
+
+    //Facebook login by Ayaz Qureshi 12-11-2024
+
+    // Function to handle Facebook login
+    function onFacebookSignIn() {
+      FB.login(
+        function (response) {
+          if (response.authResponse) {
+            console.log("response---->", response);
+            // User is logged in and authorized
+            const accessToken = response.authResponse.accessToken;
+
+            window.open(
+              `<%-details.facebookUrl%>&code=${accessToken}`,
+              "_self"
+            );
+            // Fetch user details using the access token
+            FB.api(
+              "/me",
+              { fields: "id,name,email" },
+              function (userInfoResponse) {
+                if (userInfoResponse && !userInfoResponse.error) {
+                  console.log("User Info:", userInfoResponse); // Contains id, name, email
+                  // You can now process the user information (id, name, email)
+                } else {
+                  console.log(
+                    "Error fetching user info:",
+                    userInfoResponse.error
+                  );
+                }
+              }
+            );
+          } else {
+            console.log("User cancelled login or did not fully authorize.");
+          }
+        },
+        { scope: "email,public_profile" }
+      ); // Request email and profile permissions
+    }
+
+    // Initialize Facebook SDK
+    window.fbAsyncInit = function () {
+      FB.init({
+        appId: "529362799975627", // Replace with your Facebook App ID
+        cookie: true,
+        xfbml: true,
+        version: "v13.0",
+      });
+      document
+        .getElementById("facebookBTN")
+        .addEventListener("click", onFacebookSignIn);
+    };
+
+    // let toggleForm = { initial: true, emailForm: false, phoneForm: false };
+
+    function toggleEmailForm(clickFrom) {
+      //   toggleForm.initial = false;
+      //   toggleForm.emailForm = true;
+
+      const inputDivisons = document.querySelector("#initial");
+      const emailForm = document.querySelector("#email-form");
+      const phoneForm = document.getElementById("phone-form");
+
+      // Conditionally add the class 'with-google' based on toggleform.initform
+      if (clickFrom === "email") {
+        // if (!toggleForm.initial && toggleForm.emailForm) {
+        // Array.from(inputDivisons).map(item => item.style.display = 'none')  // Add the class
+        inputDivisons.style.display = "none";
+        emailForm.style.display = "block";
+        phoneForm.style.display = "none";
+        // }
+      }
+
+      if (clickFrom === "phone") {
+        // if (!toggleForm.initial && toggleForm.phoneForm) {
+        // Array.from(inputDivisons).map(item => item.style.display = 'none')  // Add the class
+        inputDivisons.style.display = "none";
+        emailForm.style.display = "none";
+        phoneForm.style.display = "block";
+        // }
+      }
+    }
+
+    // Function to toggle password visibility
+    function togglePasswordVisibility() {
+      const passwordField = document.getElementById("password-input");
+      const toggleIcon = document.getElementById("toggle-icon");
+
+      // Toggle the input field type between 'password' and 'text'
+      if (passwordField.type === "password") {
+        passwordField.type = "text"; // Show password
+        toggleIcon.src = "/measure-assets/img/hideicon.svg"; // Change icon to show
+      } else {
+        passwordField.type = "password"; // Hide password
+        toggleIcon.src = "/measure-assets/img/showIcon.svg"; // Change icon to hide
+      }
+    }
+
+    // Initialize the intl-tel-input on the input field
+
+    const phoneInputField = document.querySelector("#phone_number");
+
+    const phoneInput = window.intlTelInput(phoneInputField, {
+      initialCountry: "us",
+      preferredCountries: ["us", "gb", "in"],
+      separateDialCode: true,
+      utilsScript:
+        "https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.19/build/js/utils.js",
+    });
+
+    document
+      .querySelector(".submit-btn")
+      .addEventListener("click", function () {
+        if (phoneInput.isValidNumber()) {
+          alert("Valid phone number!");
+        } else {
+          alert("Invalid phone number!");
+        }
+      });
+
+    function redirectToSignUp() {
+      // Fetching the grant value from the backend, passed via EJS
+      const grant = "<%= details.params.client_id %>"; // Assuming grant is available from the backend
+      if (grant) {
+        // Redirect to the signup page with the dynamic 'grant' value
+        window.location.href = grant + "/signup";
+      } else {
+        console.error("Grant value is missing!");
+      }
+    }
+
+    function gtag_report_conversion(url) {
+            console.log('called aleem')
+            // var callback = function () {
+            //     if (typeof url != 'undefined') {
+            //         window.location = url
+            //     }
+            // }
+            // gtag('event', 'conversion', {
+            //     send_to: 'AW-789738350/Rhx-CL6xyaYBEO7myfgC',
+            //     event_callback: callback
+            // })
+            return false
+        }
+  </script>
+
+  <!-- <div class="default-page-wrapper">
+
+            <div class="left-side">
+                <div class="image-wrapper">
+                    <img class="default-page-image sign-up-image" src="/measure-assets/img/foyr-measure-singup-lg.png"
+                        alt="" />
+                </div>
+                <div class="default-page-wrapper-bg-shade"></div>
+            </div>
+            <form class="right-side" action="/oauth2/v1/interaction/<%= details.uuid %>/login" method="post"
+                onsubmit="gtag_report_conversion()">
+                <div class="title-wrapper">
+                    <div class="mail-icon-wrapper">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M14.7166 12.8539L15.3994 12.3167C16.2981 11.6096 16.954 10.64 17.276 9.54279C17.598 8.44556 17.57 7.27526 17.1958 6.19469C16.8217 5.11413 16.1201 4.17704 15.1886 3.5138C14.2571 2.85055 13.142 2.49414 11.9985 2.49414C10.855 2.49414 9.73997 2.85055 8.80847 3.5138C7.87697 4.17704 7.17535 5.11413 6.80123 6.19469C6.42711 7.27526 6.39909 8.44556 6.72106 9.54279C7.04304 10.64 7.69901 11.6096 8.5977 12.3167L9.27794 12.8519L8.47448 13.1738C6.87856 13.8132 5.48606 14.8737 4.44543 16.2422C3.40481 17.6107 2.75507 19.236 2.56548 20.9448L2.06853 20.8896M14.7166 12.8539L4.06853 21.1096C4.28812 19.1548 5.22022 17.3494 6.68675 16.0384C8.15328 14.7274 10.0514 14.0027 12.0185 14.0027C13.9856 14.0027 15.8838 14.7274 17.3503 16.0384C18.8168 17.3494 19.7489 19.1548 19.9685 21.1096C19.9957 21.3554 20.113 21.5823 20.2976 21.7467C20.4823 21.911 20.7213 22.0011 20.9685 21.9996H21.0785M14.7166 12.8539L15.5241 13.1744C17.1267 13.8104 18.5259 14.8705 19.5719 16.2412C20.6176 17.6114 21.2708 19.2404 21.4614 20.9535M14.7166 12.8539L21.9585 20.8996M2.06853 20.8896L2.56553 20.9443C2.55827 21.0104 2.56408 21.0772 2.58265 21.141C2.60121 21.2048 2.63216 21.2643 2.67373 21.3162L2.28364 21.629L2.67374 21.3162C2.75769 21.4209 2.8798 21.488 3.0132 21.5026C3.14661 21.5173 3.28038 21.4784 3.38508 21.3944C3.48979 21.3105 3.55686 21.1884 3.57153 21.055L3.57166 21.0538C3.80497 18.9768 4.79532 17.0586 6.35351 15.6657C7.91171 14.2727 9.92849 13.5027 12.0185 13.5027C14.1086 13.5027 16.1254 14.2727 17.6835 15.6657C19.2417 17.0586 20.2321 18.9768 20.4654 21.0538L20.4655 21.0546C20.4791 21.1775 20.5377 21.291 20.6301 21.3732C20.7224 21.4553 20.8419 21.5004 20.9655 21.4996L20.9685 21.4996L21.0449 21.4996M2.06853 20.8896C2.26809 19.0909 2.95203 17.3801 4.04742 15.9396C5.02922 14.6484 6.30856 13.6177 7.77294 12.9332L2.06853 20.8896ZM21.0449 21.4996C21.0371 21.5009 21.0293 21.502 21.0214 21.5029L21.0785 21.9996M21.0449 21.4996H21.0785V21.9996M21.0449 21.4996C21.1667 21.4797 21.2772 21.4154 21.3547 21.3185C21.437 21.2157 21.4753 21.0845 21.4614 20.9535M21.0785 21.9996C21.3407 21.9695 21.5803 21.8369 21.7451 21.6309C21.9099 21.4248 21.9866 21.162 21.9585 20.8996M21.9585 20.8996L21.4616 20.9549C21.4615 20.9544 21.4615 20.9539 21.4614 20.9535M21.9585 20.8996L21.4614 20.9529C21.4614 20.9531 21.4614 20.9533 21.4614 20.9535M9.49847 11.7413C10.2385 12.2357 11.1085 12.4996 11.9985 12.4996C13.192 12.4996 14.3366 12.0255 15.1805 11.1816C16.0244 10.3377 16.4985 9.19311 16.4985 7.99964C16.4985 7.10962 16.2346 6.23959 15.7401 5.49957C15.2457 4.75955 14.5429 4.18277 13.7206 3.84218C12.8983 3.50158 11.9935 3.41247 11.1206 3.5861C10.2477 3.75974 9.44589 4.18832 8.81655 4.81766C8.18721 5.44699 7.75863 6.24882 7.585 7.12173C7.41136 7.99465 7.50048 8.89944 7.84107 9.72171C8.18167 10.544 8.75845 11.2468 9.49847 11.7413Z"
+                                fill="none" stroke="#008080" />
+                        </svg>
+                    </div>
+                    <div class="title">Sign in</div>
+                </div>
+                <div class="form-wrapper">
+                    <div class="input-container">
+                        <input name="email" type="text" id="email-input" placeholder="Email" onkeyup="validateForm()"
+                            required>
+                        <label for="name">Email</label>
+                    </div>
+                    <div class="input-container password-container">
+                        <input name="password" type="password" id="password-input" placeholder="Password" required
+                            onkeypress="return avoidSpace(event)" onkeyup="validateForm()">
+                        <label for="name">Password</label>
+                        <div class="forgot-password">Forgot Password?</div>
+                    </div>
+                </div>
+                <div class="action-btn-wrapper">
+                    <button class="sign-up-btn" type="submit">Sign In</button>
+                    <div class="or-block-wrapper">
+                        <div class="line"></div>
+                        <div class="or">or</div>
+                        <div class="line"></div>
+                    </div>
+                    <div class="sign-up-with-google" id="googleBTN">
+                        <div class="google-icon-wrapper">
+                            <img src="/measure-assets/img/google-logo.png" alt="" />
+                        </div>
+                        <div class="">Sign in with Google</div>
+                    </div>
+                    <div class="sign-up-with-google" id="facebookBTN">
+                        <div class="facebook-icon-wrapper">
+                            <img src="/measure-assets/img/facebook-logo.png" alt="" />
+                        </div>
+                        <div class="">Sign in with Facebook</div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="rem-indicator"></div> -->
+  <div class="content-wrapper">
+    <div class="heading">
+      <img src="/measure-assets/img/3dmodel.svg" alt="" />
+    </div>
+    <div class="partation-warpper">
+      <div class="content-container">
+        <div class="container">
+          <div class="login-wrapper">
+            <div class="login">Log in</div>
+            <div class="paragraph" onclick="redirectToSignUp()">
+              Don’t have an account? <span>SignUp</span>
+            </div>
+          </div>
+
+          <!-- initial login -->
+
+          <div id="initial">
+            <div class="login-options">
+              <div class="with-google with sign-up-with-google" id="googleBTN">
+                <img src="/measure-assets/img/google.svg" alt="" /> Continue
+                with Google
+              </div>
+              <div class="with-phone with" onclick="toggleEmailForm('phone')">
+                <img src="/measure-assets/img/phone.svg" alt="" />Continue with
+                Phone Number
+              </div>
+              <div class="email with" onclick="toggleEmailForm('email')">
+                <img src="/measure-assets/img/mail.svg" alt="" />Continue with
+                Email
+              </div>
+            </div>
+          </div>
+
+          <!-- email login -->
+          <form
+            class="right-side"
+            id="email-form"
+            action="/oauth2/v1/interaction/<%= details.uuid %>/login"
+            method="post"
+            onsubmit="gtag_report_conversion()"
+          >
+            <div class="login-options">
+              <div class="with email-input">
+                <input name="email" type="text" id="email-input" placeholder=" Email" />
+                <label for="name">Email</label>
+              </div>
+              <div class="with password-input">
+                <input
+                  type="password"
+                  placeholder="Password"
+                  class="password-field"
+                  id="password-input"
+                  required
+                  onkeypress="return avoidSpace(event)" onkeyup="validateForm()"
+                />
+                <label for="name">Password</label>
+                <div class="hide" onclick="togglePasswordVisibility()">
+                  <img
+                    src="/measure-assets/img/showIcon.svg"
+                    id="toggle-icon"
+                    alt=""
+                  />
+                </div>
+              </div>
+
+              <div class="error-message">Wrong Password!</div>
+
+              <div class="check-error">
+                <div class="check-box">
+                  <div class="check-input">
+                    <input type="checkbox" />
+                  </div>
+                  <div class="text">Remember me</div>
+                </div>
+                <div class="forgot-password">Forgot Password ?</div>
+              </div>
+              <button type="submit" class="login-button">Login</button>
+              <div class="signin-with">
+                <div class="part1"></div>
+                <div class="part2">Or login with</div>
+                <div class="part3"></div>
+              </div>
+              <div class="with-google with sign-up-with-google" id="googleBTN">
+                <img src="/measure-assets/img/google.svg" alt="" /> Continue
+                with Google
+              </div>
+            </div>
+          </form>
+
+          <div id="phone-form">
+            <div class="login-options">
+              <div class="numberinput">
+                <!-- Updated input element with ID -->
+                <input
+                  type="tel"
+                  id="phone_number"
+                  class="email-input"
+                  placeholder="Phone Number"
+                />
+              </div>
+              <div class="with login submit-btn">Submit</div>
+            </div>
+          </div>
+
+          <div class="terms">
+            By creating an account you agree with our
+            <span>Terms</span> &nbsp;and&nbsp; <span>Privacy Policy</span>
+          </div>
+        </div>
+      </div>
+      <div class="image-container">
+        <img src="/measure-assets/img/loginpageimage.svg" alt="" />
+      </div>
+    </div>
+  </div>
+</body>
