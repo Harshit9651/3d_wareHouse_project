@@ -1,4 +1,51 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  /* 480 ss-phone */
+  html {
+    font-size: 100%;
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 640px) {
+  /* 640 s-phone */
+  html {
+    font-size: 100%;
+  }
+}
+@media only screen and (min-width: 640px) and (max-width: 768px) {
+  /* 760 s-phone */
+  html {
+    font-size: 80%;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 800px) {
+  /* 800 phone */
+  html {
+    font-size: 75%;
+  }
+}
+@media only screen and (min-width: 800px) and (max-width: 900px) {
+  /* 900 b-phone */
+  html {
+    font-size: 100%;
+  }
+}
+@media only screen and (min-width: 900px) and (max-width: 1000px) {
+  /* 1000 b-phone */
+  html {
+    font-size: 75%;
+  }
+}
+@media only screen and (min-width: 1000px) and (max-width: 1200px) {
+  /* 1200 tab-land */
+  html {
+    font-size: 83%;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  html {
+    font-size: 100%;
+  }
+}
 body {
   margin: 0;
   padding: 0;
@@ -47,8 +94,7 @@ body {
   display: flex !important;
   flex-direction: column !important;
   justify-content: center;
-  gap: 0.5rem;
-  height: calc(100% - 10rem);
+  gap: 3rem;
   width: 70%;
 }
 .content-wrapper .partation-warpper .content-container .container .login-wrapper {
@@ -56,12 +102,11 @@ body {
   align-items: center;
   flex-direction: column;
   width: 100%;
-  height: 5rem;
-  margin-bottom: 1.5rem;
+  gap: 1rem;
 }
 .content-wrapper .partation-warpper .content-container .container .login-wrapper .login {
   font-family: Inter;
-  font-size: 36px;
+  font-size: 2.25rem;
   font-weight: 600;
   line-height: 46.8px;
   text-align: left;
@@ -69,13 +114,12 @@ body {
   -webkit-text-decoration-skip-ink: none;
           text-decoration-skip-ink: none;
   color: #1c1b1c;
-  margin-bottom: 1rem;
 }
 .content-wrapper .partation-warpper .content-container .container .login-wrapper .forgot-password {
   font-family: Inter;
-  font-size: 36px;
+  font-size: 2.25rem;
   font-weight: 600;
-  line-height: 46.8px;
+  line-height: 2.295rem;
   text-underline-position: from-font;
   -webkit-text-decoration-skip-ink: none;
           text-decoration-skip-ink: none;
@@ -84,9 +128,9 @@ body {
 .content-wrapper .partation-warpper .content-container .container .login-wrapper .paragraph {
   width: 100%;
   font-family: Inter;
-  font-size: 15px;
+  font-size: 1rem;
   font-weight: 400;
-  line-height: 23.4px;
+  line-height: 1.4625rem;
   text-align: center;
   text-underline-position: from-font;
   -webkit-text-decoration-skip-ink: none;
@@ -98,9 +142,9 @@ body {
 }
 .content-wrapper .partation-warpper .content-container .container .login-wrapper .paragraph span {
   font-family: Inter;
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: 600;
-  line-height: 23.4px;
+  line-height: 1.4625rem;
   text-align: left;
   text-decoration-line: underline;
   text-decoration-style: solid;
@@ -119,50 +163,41 @@ body {
   justify-content: center;
   align-items: center;
 }
-.content-wrapper .partation-warpper .content-container .container .forgot {
-  margin-bottom: 4rem;
-}
 .content-wrapper .partation-warpper .content-container .container .login-options {
-  width: 100;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
   position: relative;
 }
 .content-wrapper .partation-warpper .content-container .container .login-options .with {
   display: flex;
   justify-content: center;
-  gap: 0.4rem;
   align-items: center;
-  width: 100%;
-  height: 3.5rem;
   border: 1px solid black;
   border-radius: 3.125rem;
   font-family: Inter;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
-  line-height: 19.36px;
   text-align: left;
   text-underline-position: from-font;
   -webkit-text-decoration-skip-ink: none;
           text-decoration-skip-ink: none;
   color: #313030;
   overflow: visible;
+  padding: 1rem 1.5rem;
 }
 .content-wrapper .partation-warpper .content-container .container .login-options .with {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 3.5rem;
   border: 1px solid #c9c6c5;
   border-radius: 3.125rem;
+  padding: 1rem 1.5rem;
 }
 .content-wrapper .partation-warpper .content-container .container .login-options .with input {
   border: none;
   outline: none;
   flex: 1;
-  padding: 0 1.5rem;
   font-size: 1rem;
   color: #313030;
   background: transparent;
@@ -182,13 +217,13 @@ body {
 .content-wrapper .partation-warpper .content-container .container .login-options .otp-wrapper .inputs .otp-input {
   height: 3.5rem;
   width: 3.5rem;
-  padding: 12px 16px;
+  padding: 0.75rem, 1rem;
   border: 1px solid #c9c6c5;
   text-align: center;
   font-family: Inter;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 400;
-  line-height: 18.2px;
+  line-height: 1.1375rem;
   color: #313030;
   margin: 0px;
 }
@@ -198,17 +233,17 @@ body {
 .content-wrapper .partation-warpper .content-container .container .login-options .otp-wrapper .inputs .otp-input::-moz-placeholder {
   color: #adaaaa;
   font-family: Inter;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 400;
-  line-height: 18.2px;
+  line-height: 1.1375rem;
   text-align: center;
 }
 .content-wrapper .partation-warpper .content-container .container .login-options .otp-wrapper .inputs .otp-input::placeholder {
   color: #adaaaa;
   font-family: Inter;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 400;
-  line-height: 18.2px;
+  line-height: 1.1375rem;
   text-align: center;
 }
 .content-wrapper .partation-warpper .content-container .container .login-options .otp-wrapper .resend-otp {
@@ -217,9 +252,9 @@ body {
   width: 100%;
   margin: 0;
   font-family: Inter;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 400;
-  line-height: 18.2px;
+  line-height: 1.1375rem;
   text-align: center;
   text-underline-position: from-font;
   -webkit-text-decoration-skip-ink: none;
@@ -229,9 +264,9 @@ body {
 }
 .content-wrapper .partation-warpper .content-container .container .login-options .otp-wrapper .resend-otp span {
   font-family: Inter;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 400;
-  line-height: 18.2px;
+  line-height: 1.1375rem;
   text-underline-position: from-font;
   -webkit-text-decoration-skip-ink: none;
           text-decoration-skip-ink: none;
@@ -292,18 +327,16 @@ body {
   border: 2px solid green;
 }
 .content-wrapper .partation-warpper .content-container .container .login-options .login {
-  margin-top: 1rem;
   background: #d2d1d3;
   font-family: Inter;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
-  line-height: 16.94px;
   text-align: left;
   text-underline-position: from-font;
   -webkit-text-decoration-skip-ink: none;
           text-decoration-skip-ink: none;
   color: #8f8c91;
-  height: 3rem;
+  padding: 1rem 1.5rem;
 }
 .content-wrapper .partation-warpper .content-container .container .login-options .login.active {
   background: #683cd3;
@@ -325,18 +358,18 @@ body {
   border: none;
   outline: none;
   font-family: Inter, sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   padding: 0 1rem;
   box-sizing: border-box;
   color: #313030;
 }
 .content-wrapper .partation-warpper .content-container .container .login-options input::-moz-placeholder {
   color: #c0c0c0;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-family: "Inter";
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 400;
-  line-height: 18.2px;
+  line-height: 1.1375rem;
   text-align: left;
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
@@ -344,11 +377,11 @@ body {
 }
 .content-wrapper .partation-warpper .content-container .container .login-options input::placeholder {
   color: #c0c0c0;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-family: "Inter";
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 400;
-  line-height: 18.2px;
+  line-height: 1.1375rem;
   text-align: left;
   text-underline-position: from-font;
   -webkit-text-decoration-skip-ink: none;
@@ -359,31 +392,34 @@ body {
   display: none;
   padding-left: 1rem;
   font-family: Inter;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 400;
-  line-height: 15.6px;
+  line-height: 0.975rem;
   text-align: left;
   text-underline-position: from-font;
   -webkit-text-decoration-skip-ink: none;
           text-decoration-skip-ink: none;
   color: #06c270;
 }
+.content-wrapper .partation-warpper .content-container .container .login-options #set-password {
+  color: #8F8C91;
+}
 .content-wrapper .partation-warpper .content-container .container .error {
   display: none;
   padding-left: 1rem;
   font-family: Inter;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 400;
-  line-height: 15.6px;
+  line-height: 0.975rem;
   color: #e8505b;
 }
 .content-wrapper .partation-warpper .content-container .container .error-message {
   display: none;
   padding-left: 1rem;
   font-family: Inter, sans-serif;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 400;
-  line-height: 15.6px;
+  line-height: 0.76rem;
   color: #e8505b;
 }
 .content-wrapper .partation-warpper .content-container .container .error-active .error-message {
@@ -393,15 +429,12 @@ body {
   position: relative;
   display: flex;
   align-items: center;
-  width: 100%;
-  height: 3.5rem;
   border: 1px solid #c9c6c5;
   border-radius: 3.125rem;
   transition: border 0.3s ease;
 }
 .content-wrapper .partation-warpper .content-container .container .with input {
   flex: 1;
-  padding: 0 1.5rem;
   font-size: 1rem;
   border: none;
   outline: none;
@@ -441,12 +474,10 @@ body {
   color: #e8505b;
 }
 .content-wrapper .partation-warpper .content-container .container .login-button {
-  margin-top: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 3rem;
+  padding: 1rem, 1.5rem;
   background: #683cd3;
   color: white;
   border-radius: 3.125rem;
@@ -484,52 +515,56 @@ body {
 .content-wrapper .partation-warpper .content-container .container .error-message {
   display: none;
   color: #e8505b;
-  font-size: 12px;
+  font-size: 0.75rem;
   padding-left: 1rem;
 }
 .content-wrapper .partation-warpper .content-container .container .success-message {
   display: none;
   color: #06c270;
-  font-size: 12px;
+  font-size: 10.75rem;
   padding-left: 1rem;
 }
 .content-wrapper .partation-warpper .content-container .container .success-visible {
   display: block;
 }
 .content-wrapper .partation-warpper .content-container .container .terms {
-  margin-top: 2rem;
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  font-family: Inter;
-  font-size: 14px;
+  font-family: Inter, sans-serif;
+  font-size: 0.875rem;
   font-weight: 400;
-  line-height: 18.2px;
+  line-height: 1.1375rem;
   text-align: center;
+  color: #adaaaa;
   text-underline-position: from-font;
   -webkit-text-decoration-skip-ink: none;
           text-decoration-skip-ink: none;
-  color: #adaaaa;
 }
 .content-wrapper .partation-warpper .content-container .container .terms span {
-  font-family: Inter;
-  font-size: 14px;
+  font-family: Inter, sans-serif;
+  font-size: 0.875rem;
   font-weight: 400;
-  line-height: 18.2px;
+  line-height: 1.1375rem;
   text-underline-position: from-font;
   -webkit-text-decoration-skip-ink: none;
           text-decoration-skip-ink: none;
   color: #1b74f9;
+  cursor: pointer;
+}
+.content-wrapper .partation-warpper .content-container .container .terms span:not(:last-child) {
+  margin-right: 0.25rem;
 }
 .content-wrapper .partation-warpper .content-container .container .error {
   padding-left: 1rem;
   display: flex;
   justify-content: flex-start;
   font-family: Inter;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 400;
-  line-height: 15.6px;
+  line-height: 0.975rem;
   text-align: left;
   text-underline-position: from-font;
   -webkit-text-decoration-skip-ink: none;
@@ -538,126 +573,350 @@ body {
   width: 100%;
 }
 .content-wrapper .partation-warpper .content-container .container .check-error {
-  height: 3rem;
+  height: auto; /* Flexible height */
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Space between elements */
   align-items: center;
+  flex-wrap: wrap; /* Wrap content on smaller screens */
 }
 .content-wrapper .partation-warpper .content-container .container .check-error .check-box {
   height: 1.5rem;
-  width: 25%;
+  width: auto; /* Adjust width to fit content */
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start; /* Align checkbox and text together */
   align-items: center;
+  gap: 0.5rem; /* Add gap between checkbox and text */
 }
 .content-wrapper .partation-warpper .content-container .container .check-error .check-box .text {
-  font-family: Inter;
-  font-size: 14px;
+  font-family: Inter, sans-serif;
+  font-size: 0.875rem; /* 14px */
   font-weight: 400;
-  line-height: 16.94px;
+  line-height: 1.058rem; /* 17px */
   text-align: left;
-  text-underline-position: from-font;
-  -webkit-text-decoration-skip-ink: none;
-          text-decoration-skip-ink: none;
   color: #605e5e;
 }
 .content-wrapper .partation-warpper .content-container .container .check-error .forgot-password {
-  width: 30%;
-  height: 1.5rem;
+  width: auto; /* Flexible width */
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  font-family: Inter;
-  font-size: 14px;
+  font-family: Inter, sans-serif;
+  font-size: 0.875rem; /* 14px */
   font-weight: 400;
-  line-height: 16.94px;
+  line-height: 1.0588rem; /* 17px */
   text-align: right;
-  text-underline-position: from-font;
-  -webkit-text-decoration-skip-ink: none;
-          text-decoration-skip-ink: none;
   color: #7343ea;
 }
 .content-wrapper .partation-warpper .content-container .container .login-button {
-  margin-top: 2rem;
   display: flex;
   justify-content: center;
   gap: 0.4rem;
   align-items: center;
-  width: 100%;
-  height: 3rem;
   border-radius: 3.125rem;
   font-family: Inter;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
-  line-height: 19.36px;
+  line-height: 1.21rem;
   text-align: left;
   text-underline-position: from-font;
   -webkit-text-decoration-skip-ink: none;
           text-decoration-skip-ink: none;
   background: #d2d1d3;
   color: #8f8c91;
+  padding: 1rem 1.5rem;
 }
 .content-wrapper .partation-warpper .content-container .container .login-button.active {
   background: #683cd3;
   color: #ffffff;
   cursor: pointer;
 }
-.content-wrapper .partation-warpper .content-container .container .signin-with {
-  margin-top: 2rem;
-  width: 100%;
-  display: flex;
-  align-items: center;
-}
-.content-wrapper .partation-warpper .content-container .container .signin-with .part1 {
-  width: 40%;
-  height: 1px;
-  background-color: #313131;
-}
-.content-wrapper .partation-warpper .content-container .container .signin-with .part2 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 20%;
-  font-family: Inter;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 16.94px;
-  text-underline-position: from-font;
-  -webkit-text-decoration-skip-ink: none;
-          text-decoration-skip-ink: none;
-  color: #313131;
-}
-.content-wrapper .partation-warpper .content-container .container .signin-with .part3 {
-  width: 40%;
-  height: 1px;
-  background-color: #313131;
-}
 .content-wrapper .partation-warpper .content-container .container .google-login {
-  margin-top: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 3.5rem;
   border: 1px solid #797676;
   border-radius: 3.125rem;
   overflow: hidden;
   background-color: #ffffff;
   gap: 0.4rem;
   font-family: Inter;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
-  line-height: 19.36px;
+  line-height: 1.21rem;
   text-align: left;
   text-underline-position: from-font;
   -webkit-text-decoration-skip-ink: none;
           text-decoration-skip-ink: none;
   color: #313030;
+  padding: 1rem 1.5rem;
 }
 .content-wrapper .partation-warpper .content-container .page2 {
   margin-top: 1rem;
   height: calc(100% - 5rem);
+}
+.content-wrapper .partation-warpper .content-container #login-email {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 80%;
+}
+.content-wrapper .partation-warpper .content-container #login-email .login-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+}
+.content-wrapper .partation-warpper .content-container #login-email .login-options .with {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 1px solid #c9c6c5;
+  border-radius: 3.125rem;
+  transition: border 0.3s ease;
+}
+.content-wrapper .partation-warpper .content-container #login-email .login-options input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 1rem;
+  color: #313030;
+  background: transparent;
+}
+.content-wrapper .partation-warpper .content-container #login-email .login-options .otp-wrapper {
+  height: 100%;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.content-wrapper .partation-warpper .content-container #login-email .login-options .otp-wrapper .inputs {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.content-wrapper .partation-warpper .content-container #login-email .login-options .otp-wrapper .inputs .otp-input {
+  height: 3.5rem;
+  width: 3.5rem;
+  padding: 0.75rem, 1rem;
+  border: 1px solid #c9c6c5;
+  text-align: center;
+  font-family: Inter;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.1375rem;
+  color: #313030;
+  margin: 0px;
+}
+.content-wrapper .partation-warpper .content-container #login-email .login-options .otp-wrapper .inputs .otp-input.error {
+  border: 1px solid red;
+}
+.content-wrapper .partation-warpper .content-container #login-email .login-options .otp-wrapper .inputs .otp-input::-moz-placeholder {
+  color: #adaaaa;
+  font-family: Inter;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.1375rem;
+  text-align: center;
+}
+.content-wrapper .partation-warpper .content-container #login-email .login-options .otp-wrapper .inputs .otp-input::placeholder {
+  color: #adaaaa;
+  font-family: Inter;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.1375rem;
+  text-align: center;
+}
+.content-wrapper .partation-warpper .content-container #login-email .login-options .otp-wrapper .resend-otp {
+  display: flex;
+  height: 1rem;
+  width: 100%;
+  margin: 0;
+  font-family: Inter;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.1375rem;
+  text-align: center;
+  text-underline-position: from-font;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+  color: #484646;
+  justify-content: center;
+}
+.content-wrapper .partation-warpper .content-container #login-email .login-options .otp-wrapper .resend-otp span {
+  font-family: Inter;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.1375rem;
+  text-underline-position: from-font;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+  color: #adaaaa;
+}
+.content-wrapper .partation-warpper .content-container #login-email .login-options label {
+  position: absolute;
+  left: 1.5rem;
+  top: 0%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  font-size: 1rem;
+  color: #c0c0c0;
+  background: white;
+  opacity: 0;
+  visibility: hidden;
+}
+.content-wrapper .partation-warpper .content-container #login-email .login-options .with input:not(:-moz-placeholder-shown) + label {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(-150%);
+  font-size: 0.875rem;
+  color: #000000;
+  position: absolute;
+  left: 1.5rem;
+  top: 0%;
+  transform: translateY(-50%);
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  font-size: 1rem;
+  color: #c0c0c0;
+  background: white;
+}
+.content-wrapper .partation-warpper .content-container #login-email .login-options .with input:focus + label,
+.content-wrapper .partation-warpper .content-container #login-email .login-options .with input:not(:placeholder-shown) + label {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(-150%);
+  font-size: 0.875rem;
+  color: #000000;
+  position: absolute;
+  left: 1.5rem;
+  top: 0%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  font-size: 1rem;
+  color: #c0c0c0;
+  background: white;
+}
+.content-wrapper .partation-warpper .content-container #login-email .login-options .RconfirmPassword {
+  border: 1px solid #c9c6c5;
+  transition: border 0.3s ease;
+}
+.content-wrapper .partation-warpper .content-container #login-email .login-options .RconfirmPassword.green-border {
+  border: 2px solid green;
+}
+.content-wrapper .partation-warpper .content-container #login-email .login-options .login {
+  background: #d2d1d3;
+  font-family: Inter;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-align: left;
+  text-underline-position: from-font;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+  color: #8f8c91;
+  padding: 1rem 1.5rem;
+}
+.content-wrapper .partation-warpper .content-container #login-email .login-options .login.active {
+  background: #683cd3;
+  color: #ffffff;
+  cursor: pointer;
+}
+.content-wrapper .partation-warpper .content-container #login-email .login-options .password {
+  position: relative;
+}
+.content-wrapper .partation-warpper .content-container #login-email .login-options .hide {
+  position: absolute;
+  right: 0;
+  margin-top: 0.4rem;
+  margin-right: 1rem;
+}
+.content-wrapper .partation-warpper .content-container #login-email .login-options input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-family: Inter, sans-serif;
+  font-size: 1rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  color: #313030;
+}
+.content-wrapper .partation-warpper .content-container #login-email .login-options input::-moz-placeholder {
+  color: #c0c0c0;
+  font-size: 0.875rem;
+  font-family: "Inter";
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.1375rem;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #adaaaa;
+}
+.content-wrapper .partation-warpper .content-container #login-email .login-options input::placeholder {
+  color: #c0c0c0;
+  font-size: 0.875rem;
+  font-family: "Inter";
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.1375rem;
+  text-align: left;
+  text-underline-position: from-font;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+  color: #adaaaa;
+}
+.content-wrapper .partation-warpper .content-container #login-email .login-options .success-message {
+  display: none;
+  padding-left: 1rem;
+  font-family: Inter;
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 0.975rem;
+  text-align: left;
+  text-underline-position: from-font;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+  color: #06c270;
+}
+.content-wrapper .partation-warpper .content-container #login-email #login-email-footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+}
+.content-wrapper .partation-warpper .content-container #login-email #login-email-footer .signin-with {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.content-wrapper .partation-warpper .content-container #login-email #login-email-footer .signin-with .part1 {
+  width: 40%;
+  height: 0.0625rem;
+  background-color: #313131;
+}
+.content-wrapper .partation-warpper .content-container #login-email #login-email-footer .signin-with .part2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  font-family: Inter;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.0585rem;
+  text-underline-position: from-font;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+  color: #313131;
+}
+.content-wrapper .partation-warpper .content-container #login-email #login-email-footer .signin-with .part3 {
+  width: 40%;
+  height: 0.0625rem;
+  background-color: #313131;
 }
 .content-wrapper .partation-warpper .content-container .page3 {
   margin-top: 1rem;
@@ -685,9 +944,9 @@ body {
   background-color: #ffffff;
   gap: 0.4rem;
   font-family: Inter;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
-  line-height: 19.36px;
+  line-height: 1.21rem;
   text-align: left;
   text-underline-position: from-font;
   -webkit-text-decoration-skip-ink: none;
@@ -701,20 +960,21 @@ body {
   color: #f3f3f3;
 }
 .content-wrapper .partation-warpper .content-container .login-with-number {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
   height: calc(100% - 12rem);
 }
 .content-wrapper .partation-warpper .content-container .login-with-number .numberinput {
   display: flex;
   gap: 0.4rem;
   align-items: center;
-  width: 100%;
-  height: 3.5rem;
   border: 1px solid black;
   border-radius: 3.125rem;
   font-family: Inter;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
-  line-height: 19.36px;
+  line-height: 1.21rem;
   text-align: left;
   text-underline-position: from-font;
   -webkit-text-decoration-skip-ink: none;
@@ -722,7 +982,9 @@ body {
   color: #313030;
   overflow: visible;
   padding-left: 0.5rem;
-  border: 1px solid #C9C6C5;
+  border: 1px solid #c9c6c5;
+  padding: 1rem, 1.5rem;
+  height: 3rem;
 }
 .content-wrapper .partation-warpper .content-container .login-with-number .numberinput .iti__flag-container {
   background-color: white !important;
@@ -731,8 +993,13 @@ body {
   background-color: white !important;
 }
 .content-wrapper .partation-warpper .content-container .login-with-number .numberinput.active {
-  background: #683CD3;
-  color: #F3F3F3;
+  background: #683cd3;
+  color: #f3f3f3;
+}
+.content-wrapper .partation-warpper .content-container .login-with-number #login-number {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 }
 .content-wrapper .partation-warpper .image-container img {
   max-width: 100%;
