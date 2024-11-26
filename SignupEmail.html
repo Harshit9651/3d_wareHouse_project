@@ -6,8 +6,24 @@
     <link rel="stylesheet" href="./scss/style.css" />
     <title>Document</title>
     <style>
-
-    
+      .dropdown-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 15px;
+      }
+      .dropdown-container select {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 100%;
+      }
+      .phone-input {
+        flex: 1;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
     </style>
   </head>
   <body>
@@ -16,52 +32,67 @@
         <img src="./assets/3dmodel.svg" alt="" />
       </div>
       <div class="partation-warpper">
-        <div  class="content-container">
-      
-         <div class="container page2">
-        <div class="login-wrapper">
-          <div class="login">Sign Up</div>
-          <div class="paragraph">
-            Create you free account to browse through 5000+ 3D icons
-          </div>
-        </div>
-        <div class="login-options">
-          <div class="with email-input">
-            <input type="email" placeholder=" Email" />
-            <label>Email</label>
-          </div>
-          <div class="with password-input">
-            <input
-              type="password"
-              placeholder="Password"
-              class="password-field"
-            />
-            <label>Password</label>
-            <div class="hide">
-              <img src="./assets/hideicon.svg" alt="" />
+        <div class="content-container">
+          <div class="container page2">
+            <div class="login-wrapper">
+              <div class="login">Sign Up</div>
+              <div class="paragraph">
+                Create your free account to browse through 5000+ 3D icons
+              </div>
             </div>
-          </div>
-          <div class="with password-input">
-            <input
-              type="password"
-              placeholder="Confirm Password"
-              class="password-field"
-            />
-            <label>Confirm Password</label>
-            <div class="hide">
-              <img src="./assets/hideicon.svg" alt="" />
-            </div>
-          </div>
-        </div>
-        
+            <div class="login-options">
+              <div class="with email-input">
+                <!-- Country Dropdown with Flags -->
+                <div class="dropdown-container">
+                  <select id="country-code">
+                    <option value="+1-809">
+                      <img src="https://flagcdn.com/w320/do.png" alt="">
+                      Dominican Republic (+1-809)
+                    </option>
+                    <option value="+1-829" data-flag="https://flagcdn.com/w320/do.png">
+                      🇩🇴 Dominican Republic (+1-829)
+                    </option>
+                    <option value="+593" data-flag="https://flagcdn.com/w320/ec.png">
+                      🇪🇨 Ecuador (+593)
+                    </option>
+                    <option value="+20" data-flag="https://flagcdn.com/w320/eg.png">
+                      🇪🇬 Egypt (+20)
+                    </option>
+                    <!-- Add more options here -->
+                  </select>
+                  <input
+                    type="tel"
+                    placeholder="Enter your phone number"
+                    class="phone-input"
+                  />
+                </div>
+              </div>
 
-        
-        <div class="login-button">Login</div>
-     
-      
-      </div>
-        
-       
+              <div class="with password-input">
+                <input
+                  type="password"
+                  placeholder="Password"
+                  class="password-field"
+                />
+                <label>Password</label>
+                <div class="hide">
+                  <img src="./assets/hideicon.svg" alt="" />
+                </div>
+              </div>
+              <div class="with password-input">
+                <input
+                  type="password"
+                  placeholder="Confirm Password"
+                  class="password-field"
+                />
+                <label>Confirm Password</label>
+                <div class="hide">
+                  <img src="./assets/hideicon.svg" alt="" />
+                </div>
+              </div>
+            </div>
+            <div class="login-button">Login</div>
+          </div>
         </div>
         <div class="image-container">
           <img src="./assets/loginpageimage.svg" alt="" />
