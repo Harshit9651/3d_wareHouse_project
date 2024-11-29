@@ -1,51 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-  /* 480 ss-phone */
-  html {
-    font-size: 100%;
-  }
-}
-@media only screen and (min-width: 480px) and (max-width: 640px) {
-  /* 640 s-phone */
-  html {
-    font-size: 100%;
-  }
-}
-@media only screen and (min-width: 640px) and (max-width: 768px) {
-  /* 760 s-phone */
-  html {
-    font-size: 80%;
-  }
-}
-@media only screen and (min-width: 768px) and (max-width: 800px) {
-  /* 800 phone */
-  html {
-    font-size: 75%;
-  }
-}
-@media only screen and (min-width: 800px) and (max-width: 900px) {
-  /* 900 b-phone */
-  html {
-    font-size: 100%;
-  }
-}
-@media only screen and (min-width: 900px) and (max-width: 1000px) {
-  /* 1000 b-phone */
-  html {
-    font-size: 75%;
-  }
-}
-@media only screen and (min-width: 1000px) and (max-width: 1200px) {
-  /* 1200 tab-land */
-  html {
-    font-size: 83%;
-  }
-}
-@media only screen and (min-width: 1200px) {
-  html {
-    font-size: 100%;
-  }
-}
 body {
   margin: 0;
   padding: 0;
@@ -69,7 +21,7 @@ body {
   box-sizing: border-box;
   gap: 1rem;
 }
-.content-wrapper .heading .back-button {
+.content-wrapper .heading #mobile-back-button {
   display: none;
 }
 .content-wrapper .partation-warpper {
@@ -143,6 +95,7 @@ body {
   display: flex;
   display: flex;
   justify-content: center;
+  gap: 0.3rem;
 }
 .content-wrapper .partation-warpper .content-container .container .login-wrapper .paragraph span {
   font-family: Inter;
@@ -197,7 +150,6 @@ body {
   border: 1px solid #c9c6c5;
   border-radius: 3.125rem;
   padding: 1rem 1.5rem;
-  gap: 0.5rem;
 }
 .content-wrapper .partation-warpper .content-container .container .login-options .with input {
   border: none;
@@ -266,6 +218,7 @@ body {
           text-decoration-skip-ink: none;
   color: #484646;
   justify-content: center;
+  gap: 0.3rem;
 }
 .content-wrapper .partation-warpper .content-container .container .login-options .otp-wrapper .resend-otp span {
   font-family: Inter;
@@ -331,10 +284,6 @@ body {
 .content-wrapper .partation-warpper .content-container .container .login-options .RconfirmPassword.green-border {
   border: 2px solid green;
 }
-.content-wrapper .partation-warpper .content-container .container .login-options .with-google {
-  display: flex;
-  gap: 0.5rem;
-}
 .content-wrapper .partation-warpper .content-container .container .login-options .login {
   background: #d2d1d3;
   font-family: Inter;
@@ -368,7 +317,6 @@ body {
   outline: none;
   font-family: Inter, sans-serif;
   font-size: 1rem;
-  padding: 0 1rem;
   box-sizing: border-box;
   color: #313030;
 }
@@ -438,9 +386,17 @@ body {
   position: relative;
   display: flex;
   align-items: center;
+  gap: 0.5rem;
   border: 1px solid #c9c6c5;
   border-radius: 3.125rem;
   transition: border 0.3s ease;
+}
+.content-wrapper .partation-warpper .content-container .container .with button {
+  all: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
 }
 .content-wrapper .partation-warpper .content-container .container .with input {
   flex: 1;
@@ -482,17 +438,29 @@ body {
 .content-wrapper .partation-warpper .content-container .container .error-active input {
   color: #e8505b;
 }
+.content-wrapper .partation-warpper .content-container .container #incorrect-password {
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15.6px;
+  text-align: left;
+  text-underline-position: from-font;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+  color: #e8505b;
+  margin-left: 1rem;
+  display: none;
+}
 .content-wrapper .partation-warpper .content-container .container .login-button {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 1rem, 1.5rem;
-  background: #683cd3;
   color: white;
   border-radius: 3.125rem;
   cursor: pointer;
 }
-.content-wrapper .partation-warpper .content-container .container .login-button.active {
+.content-wrapper .partation-warpper .content-container .container .active {
   background-color: #683cd3;
   color: #fff;
   cursor: pointer;
@@ -668,6 +636,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 3rem;
+  width: 80%;
 }
 .content-wrapper .partation-warpper .content-container #login-email .login-options {
   display: flex;
@@ -679,6 +648,7 @@ body {
   position: relative;
   display: flex;
   align-items: center;
+  gap: 0.5rem;
   border: 1px solid #c9c6c5;
   border-radius: 3.125rem;
   transition: border 0.3s ease;
@@ -1014,6 +984,18 @@ body {
   flex-direction: column;
   gap: 3rem;
 }
+.content-wrapper .partation-warpper .content-container #passwordf {
+  border: 1px solid #c0c0c0;
+}
+.content-wrapper .partation-warpper .content-container #passwordf.active-error {
+  border: 1px solid red;
+}
+.content-wrapper .partation-warpper .content-container #passwordf.active-error input {
+  color: red;
+}
+.content-wrapper .partation-warpper .content-container #homepage-image {
+  display: none;
+}
 .content-wrapper .partation-warpper .image-container img {
   max-width: 100%;
   height: auto;
@@ -1022,12 +1004,31 @@ body {
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .image-container {
+    display: none;
+  }
+  .content-wrapper .heading {
+    overflow: hidden;
+    padding-left: 5%;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 4.25rem;
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.1215686275);
+    background: white;
+    box-sizing: border-box;
+    gap: 1rem;
+  }
+  .content-wrapper .heading #mobile-back-button {
+    display: flex;
+  }
   .content-wrapper .partation-warpper {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    flex-direction: column-reverse;
     align-items: center;
     gap: 1.5rem;
+    justify-content: space-between;
+    padding: 0.5rem;
   }
   .content-wrapper .partation-warpper .image-container {
     max-width: 100%;
@@ -1041,6 +1042,7 @@ body {
   }
   .content-wrapper .partation-warpper .content-container .container {
     width: 100%;
+    padding: 0.5rem;
   }
   .content-wrapper .partation-warpper .content-container .container .login-wrapper {
     display: flex;
@@ -1056,15 +1058,6 @@ body {
     font-style: normal;
     font-weight: 500;
     line-height: 130%;
-  }
-  .content-wrapper .partation-warpper .content-container .container .login-wrapper .f-header {
-    color: var(--Black-900, #1c1b1c);
-    text-align: center;
-    font-family: Inter;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 130%; /* 31.2px */
   }
   .content-wrapper .partation-warpper .content-container .container .login-wrapper .paragraph {
     color: var(--Black-700, #484646);
@@ -1094,32 +1087,23 @@ body {
     justify-content: center;
     align-items: center;
   }
+  .content-wrapper .partation-warpper .content-container .container .login-wrapper .mobile-signup-number {
+    width: 65%;
+  }
   .content-wrapper .partation-warpper .content-container .container .login-wrapper .forgot-paragraph {
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  .content-wrapper .partation-warpper .content-container .container .login-wrapper .f-password {
-    width: 80%;
-    color: var(--Black-700, #484646);
-    text-align: center;
-    font-family: Inter;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 130%;
-    text-align: center;
-  }
   .content-wrapper .verify-otp-mobile {
     display: flex;
     justify-content: center;
     gap: 0px;
-    margin-top: 9rem;
-    max-width: 100%;
-    padding: 0px;
+    gap: 1rem;
+    width: 100%;
   }
   .content-wrapper .verify-otp-mobile #signup-otp .otp-wrapper {
-    max-width: 100%;
+    width: 100%;
   }
   .content-wrapper .verify-otp-mobile #signup-otp .otp-wrapper .inputs {
     justify-content: center;
@@ -1137,48 +1121,46 @@ body {
     align-items: center;
     align-self: stretch;
   }
-  .content-wrapper .login-with-email {
-    display: flex;
-    justify-content: center;
-    max-width: 100%;
-    padding: 1rem;
+  .content-wrapper .sendotp {
     width: 100%;
-    align-items: normal;
   }
-  .content-wrapper .login-with-email .login-wrapper {
-    padding: 0;
+  .content-wrapper .sendotp #head-content {
+    display: flex;
+    gap: 0.1rem;
+  }
+  .content-wrapper #verify-otp-header {
     max-width: 100%;
   }
-  .content-wrapper .login-with-email .signin-with {
+  .content-wrapper #verify-otp-header .paragraph #head-content {
+    display: flex;
+    gap: 2px;
     max-width: 100%;
-    display: flex;
-    align-items: center;
-  }
-  .content-wrapper .login-with-email .signin-with .part1 {
-    width: 35% !important;
-    height: 0.0625rem;
-    background-color: #313131;
-  }
-  .content-wrapper .login-with-email .signin-with .part2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30% !important;
+    color: var(--Black-700, #484646);
+    text-align: center;
     font-family: Inter;
-    font-size: 0.875rem;
+    font-size: 14px;
+    font-style: normal;
     font-weight: 400;
-    line-height: 1.0585rem;
-    text-underline-position: from-font;
-    -webkit-text-decoration-skip-ink: none;
-            text-decoration-skip-ink: none;
-    color: #313131;
+    line-height: 130%; /* 18.2px */
   }
-  .content-wrapper .login-with-email .signin-with .part3 {
-    width: 35% !important;
-    height: 0.0625rem;
-    background-color: #313131;
+  .content-wrapper #verify-otp-header .otp-wrapper {
+    height: 10rem;
   }
-  .content-wrapper .reset-password {
-    align-items: normal;
+  .content-wrapper #signup-otp {
+    width: 100%;
+  }
+  .content-wrapper #signup-otp .resend-otp {
+    width: 100%;
+  }
+  .content-wrapper .Signup-homepage-conatiner {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 0.5rem;
+  }
+  .content-wrapper .Signup-homepage-conatiner .image-container {
+    display: flex !important;
+  }
+  .content-wrapper #verify-otp {
+    margin-top: 30%;
   }
 }/*# sourceMappingURL=style.css.map */
